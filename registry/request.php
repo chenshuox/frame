@@ -1,0 +1,46 @@
+<?php
+namespace simple\registry;
+include "registry.php";
+include "../request/request.php";
+
+class RequestRegistry extends Registry
+{
+	private $values = array();
+	private static $instance;
+
+	private function __construct () {}
+
+	public static function instance() {
+		if(!isset(self::$instance)) {
+			self::$instance = new self();
+		}
+		return self::$instance;
+	}
+
+	protected function get ($key){
+		if(isset($this->values[$key])) {
+			return $this->values[$key];
+		}
+		return null;
+	}
+
+	protected function set ($key, $value){
+		$this->values[$key] = $value;
+	}
+
+	public static function getRequest() {
+		return self::instance()->get("request");
+	}
+
+	public static function setRequest(\simple\request\Request $request) {
+		self::instance()->set("request", $request);
+	}
+}
+
+RequestRegistry::setRequest(new \simple\request\Request());
+$data = RequestRegistry::getRequest();
+$data->setProperty("dd","ee");
+echo $data->getProperty("dd");
+var_dump($data->getProperty("c"));
+
+?>
