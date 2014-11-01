@@ -37,10 +37,13 @@ class RequestRegistry extends Registry
 	}
 }
 
+//实例化Request类
 RequestRegistry::setRequest(new \simple\request\Request());
+
+//返回Request类的实例
 $data = RequestRegistry::getRequest();
-$data->setProperty("dd","ee");
-echo $data->getProperty("dd");
-var_dump($data->getProperty("c"));
+
+//输出请求中action的值
+echo $data->getProperty("action"));
 
 ?>
