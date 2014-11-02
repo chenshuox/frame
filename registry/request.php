@@ -44,6 +44,7 @@ RequestRegistry::setRequest(new \simple\request\Request());
 $data = RequestRegistry::getRequest();
 
 //输出请求中action的值
-echo $data->getProperty("action"));
+echo $data->getProperty("action");
+
 
 ?>
