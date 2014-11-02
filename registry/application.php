@@ -57,7 +57,7 @@ class ApplicationRegisrty extends Registry
 	}
 }
 
-ApplicationRegisrty::setDSN("mysql");
+ApplicationRegisrty::setDSN("host=mysql,dbname=test");
 
 echo ApplicationRegisrty::getDSN();
 
