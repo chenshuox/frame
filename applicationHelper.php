@@ -1,7 +1,7 @@
 <?php
 namespace simple;
 
-class Application
+class ApplicationHelper
 {
 	private $route;
 	private $control;
@@ -31,7 +31,16 @@ class Application
 	}
 
 	public function run() {
-		
+		$filename = "application/controller/".$this->control.".php";
+		if(file_exists($filename)) {
+			//throw new \Exception("Error Processing Request", 1);
+		}
+		include $filename;
+		$control = ucfirst(strtolower($this->control));
+		$classname = "\\simple\\application\\controller\\{$this->control}";
+		$object = new $classname;
+		$method = $this->action;
+		$object->$method();
 	}
 
 }

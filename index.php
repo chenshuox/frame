@@ -1,12 +1,7 @@
 <?php
-class home{
-		
-	public function index() {
-		echo "index";
-	}
-}
-include "application.php";
-$app = new \simple\Application();
+
+include "applicationHelper.php";
+$app = new \simple\ApplicationHelper();
 
 $app->run();
 
