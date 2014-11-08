@@ -1,5 +1,5 @@
 <?php
-namespace simple;
+namespace simple\system\core\controller;
 
 class ApplicationHelper
 {
@@ -8,10 +8,20 @@ class ApplicationHelper
 	private $action;
 
 	public function __construct() {
-		require "request/pathinfo.php";
-		$this->route = new \simple\request\Pathinfo();
-		$this->init();
+		//require CORE_PATH."request/pathinfo.php";
+		//$this->route = new \simple\request\Pathinfo();
+		//$this->init();
 	}
+
+	//类的自动加载
+	public static function load($filename) {
+		$filename = strtolower($filename);
+		if(preg_match("/\\\\/", $filename)) {
+			$path = substr(str_replace("\\", "/", $filename).".php", 7);
+		}
+		require $path;
+	}
+
 
 	private function init() {
 		$this->control();
@@ -47,5 +57,9 @@ class ApplicationHelper
 
 }
 
+spl_autoload_register("\simple\system\core\controller\ApplicationHelper::load");
+
+$path = new \simple\system\core\request\Pathinfo();
+$chen = new \simple\system\core\controller\Controller();
 
 ?>

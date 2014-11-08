@@ -1,14 +1,18 @@
 <?php
+//核心类库路径定义
+define("CORE_PATH", "./system/core/");
 
-include "applicationHelper.php";
-$app = new \simple\ApplicationHelper();
+//扩展类库路径定义
+define("EXPAND_PATH", "./system/expand");
 
-$app->run();
+//第三方类库路径定义
+define("VENDOR_PARH", "./system/vendor");
+
+
+require CORE_PATH."controller/applicationHelper.php";
+$app = new \simple\system\core\controller\ApplicationHelper();
+
+//$app->run();
+
 
 ?>
-<form method="post">
-	<input type="submit" value="post">
-</form>
-<form method="get">
-	<input type="submit" value="get">
-</form>

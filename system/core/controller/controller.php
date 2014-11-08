@@ -1,5 +1,5 @@
 <?php
-namespace simple\controller;
+namespace simple\system\core\controller;
 
 class Controller
 {

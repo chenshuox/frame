@@ -1,5 +1,5 @@
 <?php
-namespace simple\request;
+namespace simple\system\core\request;
 
 class Pathinfo
 {
