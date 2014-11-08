@@ -12,10 +12,7 @@ class Controller
 	}
 
 	public function display($dir, $file) {
-		$path = new \simple\request\Pathinfo();
-		if(empty( $path->get(1))) {
-			echo "home";
-		}
+		$path = new \simple\system\core\request\Pathinfo();
 		include "application/view/".$dir."/".$file.".php";
 	}
 

@@ -9,10 +9,10 @@ define("EXPAND_PATH", "./system/expand");
 define("VENDOR_PARH", "./system/vendor");
 
 
-require CORE_PATH."controller/applicationHelper.php";
+require "./system/core/controller/applicationHelper.php";
+
 $app = new \simple\system\core\controller\ApplicationHelper();
 
-//$app->run();
-
+$app->run();
 
 ?>

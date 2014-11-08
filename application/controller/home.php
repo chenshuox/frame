@@ -1,8 +1,7 @@
 <?php
 namespace simple\application\controller;
-$path = include "controller/controller.php";
 
-class Home extends \simple\controller\Controller
+class Home extends \simple\system\core\controller\Controller
 {
 	public function index() {
 	
