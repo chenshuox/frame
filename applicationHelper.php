@@ -12,10 +12,12 @@ class ApplicationHelper
 		$this->route = new \simple\request\Pathinfo();
 		$this->init();
 	}
+
 	private function init() {
 		$this->control();
 		$this->action();
 	}
+	
 	private function control() {
 		if(empty($this->route->get(1))) {
 			return $this->control = "home";
