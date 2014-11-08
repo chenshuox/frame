@@ -1,6 +1,7 @@
 <?php
-namespace simple\registry;
-include "registry.php";
+namespace simple\system\core\registry;
+
+//include "registry.php";
 
 class SessionRegistry extends  Registry
 {

@@ -28,8 +28,8 @@ class ApplicationHelper
 		$this->init();
 		$filename = "application/controller/".$this->control.".php";
 		
-		if(file_exists($filename)) {
-			//throw new \Exception("Error Processing Request", 1);
+		if(!file_exists($filename)) {
+			throw new \Exception("Error Processing Request");
 		}
 		include $filename;
 		$control = ucfirst(strtolower($this->control));

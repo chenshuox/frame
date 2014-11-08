@@ -1,5 +1,5 @@
 <?php
-namespace simple\registry;
+namespace simple\system\core\registry;
 include "registry.php";
 
 class ApplicationRegisrty extends Registry

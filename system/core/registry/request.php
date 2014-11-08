@@ -1,7 +1,8 @@
 <?php
-namespace simple\registry;
-include "registry.php";
-include "../request/request.php";
+namespace simple\system\core\registry;
+
+//include "registry.php";
+//include "../request/request.php";
 
 class RequestRegistry extends Registry
 {

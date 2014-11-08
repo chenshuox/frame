@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>index</title>
+	<title>chenshuo</title>
+	<meta charset="utf-8">
 </head>
 <body>
 	<h2>simple</h2>

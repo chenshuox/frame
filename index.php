@@ -15,4 +15,5 @@ $app = new \simple\system\core\controller\ApplicationHelper();
 
 $app->run();
 
+
 ?>
