@@ -13,11 +13,11 @@ class Controller
 
 	public function display($dir, $file) {
 		$path = new \simple\system\core\request\Pathinfo();
-		include "application/view/".$dir."/".$file.".php";
+		include "application/view/{$dir}/{$file}.php";
 	}
 
-	public function command() {
-
+	public function command($cmd) {
+		echo $cmd;
 	}
 
 	public function get() {

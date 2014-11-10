@@ -5,6 +5,7 @@ class ApplicationHelper
 {
 	private $control;
 	private $action;
+	private $data;
 
 	//类的自动加载
 	public static function load($filename) {
@@ -13,6 +14,10 @@ class ApplicationHelper
 			$path = substr(str_replace("\\", "/", $filename).".php", 7);
 		}
 		require $path;
+	}
+
+	public function config() {
+		
 	}
 
 
@@ -27,7 +32,6 @@ class ApplicationHelper
 	public function run() {
 		$this->init();
 		$filename = "application/controller/".$this->control.".php";
-		
 		if(!file_exists($filename)) {
 			throw new \Exception("Error Processing Request");
 		}

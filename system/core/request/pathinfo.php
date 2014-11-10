@@ -15,10 +15,12 @@ class Pathinfo
 			return true;
 		}
 		$this->pathinfo = $_SERVER["PATH_INFO"];
+
 		return $this->pathinfo = explode("/", $this->pathinfo);
 	}
 
 	public function get($key) {
+
 		if(empty($this->pathinfo[$key])) {
 			return;
 		}else{
