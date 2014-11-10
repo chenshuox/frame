@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>chenshuo</title>
+	<title>陈朔的个人框架</title>
 	<meta charset="utf-8">
 </head>
 <body>
@@ -12,6 +12,7 @@
 		<ul>
 			<li><input type="text" name="username"></li>
 			<li><input type="password" name="password"></li>
+			<li><input type="range" name="password"></li>
 			<li><input type="submit" value="login"></li>
 		</ul>
 	</form>
