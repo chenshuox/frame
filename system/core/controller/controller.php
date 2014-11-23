@@ -17,7 +17,10 @@ class Controller
 	}
 
 	public function command($cmd) {
-		echo $cmd;
+		include "service/commod/{$cmd}.php";
+		$classname = "\\simple\\service\\commod\\{$cmd}";
+		$object = new $classname;
+		$object->execute();
 	}
 
 	public function get() {

@@ -1,9 +1,13 @@
 <?php
-namespace simple\system\core\command;
+namespace simple\system\core\controller;
 
 abstract class Command
 {
-	abstract function execute(CommandContext $context);
+	abstract function execute();
+
+	public function show() {
+		
+	}
 }
 
 ?>

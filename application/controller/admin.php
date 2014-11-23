@@ -1,13 +1,13 @@
 <?php
 namespace simple\application\controller;
 
-class Home extends \simple\system\core\controller\Controller
+class Admin extends \simple\system\core\controller\Controller
 {
 	public function index() {
 	
 		if($this->get())
 		{
-			$this->display("home", "index");
+			$this->display("admin", "login");
 		}
 
 		if($this->post())

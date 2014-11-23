@@ -20,7 +20,7 @@ class Mysql
 		return self::$instance;
 	}
 
-	public function execute() {
+	public function execute($sql) {
 		
 	}
 	
