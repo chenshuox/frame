@@ -17,7 +17,8 @@ class Route
 
 	//获取控制器
 	private function control() {
-		if(empty($this->route->get(1))) {
+		$control = $this->route->get(1);
+		if(empty($control)) {
 			return $this->control = $this->data["default"]["controller"];
 		}
 		return $this->control = $this->route->get(1);
@@ -25,7 +26,8 @@ class Route
 
 	//获取方法
 	private function action() {
-		if(empty($this->route->get(2))) {
+		$action = $this->route->get(2);
+		if(empty($action)) {
 			return $this->action = $this->data["default"]["action"];
 		}
 		return $this->action = $this->route->get(2);
