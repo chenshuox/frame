@@ -21,7 +21,7 @@ class Mysql
 	}
 
 	public function execute($sql) {
-		
+		$this->link->query($sql);
 	}
 	
 }
