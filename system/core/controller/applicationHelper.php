@@ -13,6 +13,7 @@ class ApplicationHelper
 		if(preg_match("/\\\\/", $filename)) {
 			$path = substr(str_replace("\\", "/", $filename).".php", 7);
 		}
+		echo $path;
 		require $path;
 	}
 
