@@ -3,11 +3,15 @@ namespace simple\system\core\database;
 
 class Mapper
 {
-	public $database;
+	public $db;
 		
 	public function __construct() {
 		//实例化mysql数据库
-		$this->database = Mysql::instance();
+		$this->db = \simple\system\core\database\Mysql::instance();
+	}
+
+	public function find($id) {
+		
 	}
 	
 }
