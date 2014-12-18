@@ -1,5 +1,6 @@
 <?php
 namespace simple\system\core\database;
+use simple\system\core\common;
 
 class Mysql
 {
@@ -9,7 +10,7 @@ class Mysql
 	private $link;
 
 	private function __construct() {
-		$data = \simple\system\core\common\Config::get("database");
+		$data = common\Config::get("database");
 		$this->link = new \mysqli($data["mysqli"]["host"], $data["mysqli"]["user"], $data["mysqli"]["pass"],$data["mysqli"]["database"]);
 		$this->link->set_charset($data["mysqli"]["char"]);
 	}

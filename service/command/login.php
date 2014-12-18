@@ -1,7 +1,8 @@
 <?php
 namespace simple\service\command;
+use simple\system\core\controller;
 
-class Login extends \simple\system\core\controller\Command
+class Login extends controller\Command
 {	
 
 	public function execute(){

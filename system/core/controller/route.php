@@ -1,5 +1,8 @@
 <?php
 namespace simple\system\core\controller;
+use simple\system\core\request;
+use simple\system\core\common;
+
 class Route
 {	
 	private $route;
@@ -8,8 +11,8 @@ class Route
 	private $data;
 
 	public function __construct() {
-		$this->route = new \simple\system\core\request\Pathinfo();
-		$array = \simple\system\core\common\Config::get("route");
+		$this->route = new request\Pathinfo();
+		$array = common\Config::get("route");
 		$this->data = $array;
 		$this->control();
 		$this->action();
