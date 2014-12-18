@@ -11,9 +11,9 @@ class ApplicationHelper
 	public static function load($filename) {
 		$filename = strtolower($filename);
 		if(preg_match("/\\\\/", $filename)) {
-			$path = substr(str_replace("\\", "/", $filename).".php", 7);
+			$filename = substr(str_replace("\\", "/", $filename).".php", 7);
 		}
-		echo $path;
+		$path = $filename;
 		require $path;
 	}
 

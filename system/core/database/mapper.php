@@ -7,11 +7,15 @@ class Mapper
 		
 	public function __construct() {
 		//实例化mysql数据库
-		$this->db = \simple\system\core\database\Mysql::instance();
+		$this->db = Mysql::instance();
 	}
 
 	public function find($id) {
 		
+	}
+
+	public function insert(){
+		$this->db->execute();
 	}
 	
 }

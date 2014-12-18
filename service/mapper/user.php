@@ -1,9 +1,11 @@
 <?php
-namespace simple\system\core\database;
+namespace simple\service\mapper;
 
-class User extends Mapper
+class Admin extends Mapper
 {
-		
+	
+	public $insert = "INSERT INTO pre_admin (username, password) VALUES ('chenshuo','chenshuo')";
+
 	public function select() {
 
 	}

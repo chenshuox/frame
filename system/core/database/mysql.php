@@ -11,6 +11,7 @@ class Mysql
 	private function __construct() {
 		$data = \simple\system\core\common\Config::get("database");
 		$this->link = new \mysqli($data["mysqli"]["host"], $data["mysqli"]["user"], $data["mysqli"]["pass"],$data["mysqli"]["database"]);
+		$this->link->set_charset($data["mysqli"]["char"]);
 	}
 
 	public static function instance() {
@@ -21,7 +22,7 @@ class Mysql
 	}
 
 	public function execute($sql) {
-		$this->link->query($sql);
+		return $this->link->query($sql);
 	}
 	
 }

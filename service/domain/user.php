@@ -1,7 +1,7 @@
 <?php
-namespace simple\system\core\database;
+namespace simple\service\domain;
 
-class User extends Mapper
+class Admin extends Domain
 {
 	private $username;
 	private $password;
