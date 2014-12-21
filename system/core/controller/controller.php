@@ -1,5 +1,6 @@
 <?php
 namespace simple\system\core\controller;
+use simple\system\core\request;
 
 class Controller
 {
@@ -12,7 +13,7 @@ class Controller
 	}
 
 	public function display($dir, $file) {
-		$path = new \simple\system\core\request\Pathinfo();
+		$path = new request\Pathinfo();
 		include "application/view/{$dir}/{$file}.php";
 	}
 

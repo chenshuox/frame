@@ -13,9 +13,21 @@ class Admin extends controller\Controller
 
 		if($this->post())
 		{
-			$this->command("login");
+			$this->display("admin", "index");
 		}
 
+	}
+
+	public function login() {
+		if($this->get())
+		{
+			echo "<meta charset='utf-8'> 错误！";
+		}
+
+		if($this->post())
+		{
+			echo "post";
+		}
 	}
 
 	public function show() {

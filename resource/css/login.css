@@ -1,0 +1,54 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	background: #5A6A7A;
+}
+section{
+	margin: 0 auto;
+}
+section form{
+	margin: 100px auto;
+	width: 320px;
+	padding: 15px;
+	background: #ffffff;
+}
+section form p{
+	padding: 10px 0px;
+}
+section form p strong{
+	color: #ff0000;
+}
+section form p span{
+	font-size: 12px;
+	color: #bbbbbb;
+	padding-left: 10px;
+}
+section form input{
+	outline: none;
+}
+section form input[type="text"], section form input[type="password"]{
+	width: 305px;
+	font-size: 14px;
+	padding: 5px;
+}
+section form input[type="submit"]{
+	float: right;
+	padding: 5px 10px;
+	border: 1px solid #1AA290;
+	border-radius: 4px;
+	background: #1BA593;
+	color: #ffffff;
+}
+section form h3{
+	font-size: 20px;
+	padding-bottom: 20px;
+	color: #8B91A0;
+}
+.footer{
+	line-height: 20px;
+	font-size: 12px;
+	text-align: center;
+	color: #cccccc;
+}

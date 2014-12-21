@@ -8,12 +8,12 @@
 </head>
 <body>
 	<section>
-		<form id="from" action="index.html" method="post">
-			<h3>Sign in to your account</h3>
+		<form id="from" action="<?=URL?>/index.php/admin/index" method="post">
+			<h3>网站后台管理系统</h3>
 			<p><input type="text" name="username" placeholder="username"></p>
 			<p><input type="password" name="password" placeholder="password"></p>
 			<p><input type="checkbox" name="bike"><span>Keep me signed in </span><input type="submit" value="Login"></p>
-			<p class="footer">2014 &copy;simple by chenshuo. </p>
+			<p class="footer">2014 &copy; simple by chenshuo. </p>
 		</form>
 	</section>
 </body>

@@ -26,6 +26,7 @@ class Pathinfo
 		}else{
 			return $this->pathinfo[$key];
 		}
+		
 	}
 
 
