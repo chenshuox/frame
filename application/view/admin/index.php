@@ -10,7 +10,7 @@
 </head>
 <body>
 	<header>
-		<h1><i class="icon-paper-plane"></i>CHENSHUO</h1>
+		<h1><i class="icon-paper-plane"></i>足球迷</h1>
 	</header>
 	<section>
 		<aside id="aside">
@@ -18,10 +18,10 @@
 				<h3>Discover</h3>
 				<ul>
 					<li>
-						<a href="" target="content"><i class="icon-book-open text-primary-lter"></i>文章</a>
+						<a href="" target="content"><i class="icon-book-open text-primary-lter"></i>俱乐部</a>
 						<ul>
-							<li><a href="" target="content"><i class="fa fa-angle-right text-xs"></i>添加文章</a></li>
-							<li><a href="" target="content"><i class="fa fa-angle-right text-xs"></i>文章管理</a></li>
+							<li><a href="" target="content"><i class="fa fa-angle-right text-xs"></i>添加俱乐部</a></li>
+							<li><a href="" target="content"><i class="fa fa-angle-right text-xs"></i>话题管理</a></li>
 							<li><a href="http://www.baidu.com" target="content"><i class="fa fa-angle-right text-xs"></i>添加分类</a></li>
 							<li><a href="http://www.so.com" target="content"><i class="fa fa-angle-right text-xs"></i>分类管理</a></li>
 						</ul>
@@ -34,7 +34,7 @@
 						</ul>
 					</li>
 					<li><a href=""><i class="icon-settings text-primary-lter"></i>设置</a></li>
-					<li><a href=""><i class="icon-cloud-download text-primary-lter"></i>插件</a></li>
+					<li><a href=""><i class="icon-cloud-download text-primary-lter"></i>球队</a></li>
 					<li><a href=""><i class="icon-drawer text-primary-lter"></i>工具</a></li>
 					<li>
 						<a href=""><i class="icon-folder-alt text-primary-lter"></i>开源</a>

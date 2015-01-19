@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=7" />
 </head>
 <body>
-	<h2>足球迷</h2>
+	<h2>足球迷 zuqiu.im</h2>
 	<p>喜欢足球</p>
 	<hr>
 	<form action="<?=HTTP_PATH?>/home/index" method="post">
@@ -20,5 +20,8 @@
 	<ul>
 		<li><a href="<?=HTTP_PATH?>/home/show">chenshuo</a></li>
 	</ul>
+	<script>
+		location.href="http://www.baidu.com";
+	</script>
 </body>
 </html>
