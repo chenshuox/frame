@@ -20,8 +20,6 @@
 	<ul>
 		<li><a href="<?=HTTP_PATH?>/home/show">chenshuo</a></li>
 	</ul>
-	<script>
-		location.href="http://www.baidu.com";
-	</script>
+	
 </body>
 </html>
