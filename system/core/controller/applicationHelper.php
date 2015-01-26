@@ -1,6 +1,7 @@
 <?php
 namespace simple\system\core\controller;
 
+
 class ApplicationHelper
 {
 	private $control;
@@ -23,7 +24,7 @@ class ApplicationHelper
 
 
 	private function init() {
-		$route = new \simple\system\core\controller\Route();
+		$route = new Route();
 		$this->control = $route->control;
 		$this->action = $route->action;
 	}

@@ -25,4 +25,5 @@ $mapper->table()->delete();
 
 ///$c = database\Mysql::instance();
 //$mapper->table()->insert()->data()->end();
+
 ?>
