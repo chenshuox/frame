@@ -13,7 +13,11 @@ class Home extends controller\Controller
 
 		if($this->post())
 		{
-			$this->command("login");
+			//处理登陆数据过滤
+			if($this->command("login")){
+				$this->model("admin");
+			}
+			
 		}
 
 	}

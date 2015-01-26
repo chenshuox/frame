@@ -1,4 +1,5 @@
 <?php
+//引用命名空间
 use simple\system\core\controller;
 use simple\system\core\database;
 use simple\service\mapper;
@@ -12,15 +13,16 @@ require "./system/core/controller/applicationHelper.php";
 $app = new controller\ApplicationHelper();
 $app->run();
 
+
+
+//均为测试内容
 $domain = new domain\Admin();
-$domain->setUsername("chens");
+
 $username = $domain->getUsername();
 echo $username;
 $mapper = new mapper\Admin();
+$mapper->table()->delete();
 
 //$c = database\Mysql::instance();
-
-//$mapper -> select("INSERT INTO pre_admin (username, password) VALUES ('$username', 'chens')");
-//$mapper->insert()->table("admin")->data("$data");
-//$mapper->select()->table()->data();
+//$mapper->table()->insert()->data()->end();
 ?>
