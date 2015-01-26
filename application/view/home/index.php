@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>足球迷</title>
+	<title><?php echo $webName; ?></title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=7" />
 </head>
 <body>
-	<h2>足球迷</h2>
-	<p>喜欢足球</p>
+	<h2><?php echo $webName; ?></h2>
+	<p><?php echo $description; ?></p>
 	<hr>
 	<form action="<?=HTTP_PATH?>/home/index" method="post">
 		<ul>
@@ -29,5 +29,6 @@
 		text.value = color.value;
 	}
 	</script>
+	<p><?php echo $powered; ?></p>
 </body>
 </html>

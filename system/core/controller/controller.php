@@ -4,15 +4,18 @@ use simple\system\core\request;
 
 class Controller
 {
+	public $data = array();
+	
 	public function __construct() {
 
 	}
 
-	public function assign() {
-
+	public function assign($key, $value) {
+		$this->data[$key] = $value;
 	}
 
 	public function display($dir, $file) {
+		extract($this->data);
 		$path = new request\Pathinfo();
 		include "application/view/{$dir}/{$file}.php";
 	}
