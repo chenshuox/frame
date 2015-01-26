@@ -28,8 +28,6 @@ class ApplicationHelper
 		$this->action = $route->action;
 	}
 	
-	
-
 	public function run() {
 		$this->init();
 		$filename = "application/controller/".$this->control.".php";
@@ -43,7 +41,6 @@ class ApplicationHelper
 		$method = $this->action;
 		$object->$method();
 	}
-
 }
 
 spl_autoload_register("\simple\system\core\controller\ApplicationHelper::load");
