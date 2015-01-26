@@ -25,6 +25,11 @@ class Mysql
 	public function execute($sql) {
 		return $this->link->query($sql);
 	}
+
+	public function close(){
+		$this->link->close();
+	}
+
 	
 }
 
