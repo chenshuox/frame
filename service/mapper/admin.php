@@ -4,7 +4,13 @@ use simple\system\core\database;
 
 class Admin extends database\Mapper
 {
-	
+
+	//数据库连接句柄
+	private $link;	
+
+	public function __construct() {
+		$this->link = database\Mysql::instance();
+	}
 
 	public function select() {
 		
@@ -20,6 +26,10 @@ class Admin extends database\Mapper
 
 	public function insert($sql) {
 		$this->doInsert($sql);
+	}
+
+	public function __destruct() {
+		$this->link->close();
 	}
 
 }

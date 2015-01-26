@@ -1,8 +1,8 @@
 <?php
 use simple\system\core\controller;
-//use simple\system\core\database;
-//use simple\service\mapper;
-//use simple\service\domain;
+use simple\system\core\database;
+use simple\service\mapper;
+use simple\service\domain;
 
 define("HTTP_PATH", "http://".$_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"]);
 define("URL", dirname(HTTP_PATH));
@@ -12,11 +12,14 @@ require "./system/core/controller/applicationHelper.php";
 $app = new controller\ApplicationHelper();
 $app->run();
 
-//$domain = new domain\Admin();
-//$domain->setUsername("chens");
-//$username = $domain->getUsername();
-//echo $username;
-//$mapper = new mapper\Admin();
+$domain = new domain\Admin();
+$domain->setUsername("chens");
+$username = $domain->getUsername();
+echo $username;
+$mapper = new mapper\Admin();
+
+//$c = database\Mysql::instance();
+
 //$mapper -> select("INSERT INTO pre_admin (username, password) VALUES ('$username', 'chens')");
 //$mapper->insert()->table("admin")->data("$data");
 //$mapper->select()->table()->data();
