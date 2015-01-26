@@ -1,7 +1,6 @@
 <?php
 namespace simple\system\core\controller;
 
-
 class ApplicationHelper
 {
 	private $control;
