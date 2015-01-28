@@ -7,12 +7,12 @@ class Request
 	private $data;
 
 	public function __construct() {
-		$this->init();
+		$this->handle();
 
 		// registry\Request::setRequest($this);没看懂
 	}
 
-	private function init() {
+	private function handle() {
 		if(isset($_SERVER["REQUEST_METHOD"])) {
 			foreach ($_REQUEST as $key => $value) {
 				//特殊字符转义

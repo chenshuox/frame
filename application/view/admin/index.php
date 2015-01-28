@@ -3,10 +3,10 @@
 <head>
 	<title>admin</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="<?=URL?>/resource/css/style.css">
-	<link rel="stylesheet" type="text/css" href="<?=URL?>/resource/css/simple-line-icons.css">
-	<link rel="stylesheet" type="text/css" href="<?=URL?>/resource/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="<?=URL?>/resource/css/perfect-scrollbar.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>/resource/css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>/resource/css/simple-line-icons.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>/resource/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>/resource/css/perfect-scrollbar.css">
 </head>
 <body>
 	<header>
@@ -63,8 +63,8 @@
 		</div>
 	</section>
 </body>
-<script src="<?=URL?>/resource/js/jquery.js"></script>
-<script src="<?=URL?>/resource/js/perfect-scrollbar.js"></script>
+<script src="<?php echo URL; ?>/resource/js/jquery.js"></script>
+<script src="<?php echo URL; ?>/resource/js/perfect-scrollbar.js"></script>
 <script>
 	$(function(){
 		$('#aside').perfectScrollbar();
@@ -81,7 +81,7 @@
 		    $("#aside > nav > ul > li > ul > li").click(function(){
 				$(this).addClass("on").siblings().removeClass("on");
 			});
-		    return false;
+			return false;
 		});
 	});
 </script>
