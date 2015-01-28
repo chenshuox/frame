@@ -1,31 +1,30 @@
 <?php
 namespace simple\application\controller;
 use simple\system\core\controller;
+use simple\service\domain;
 
 class Admin extends controller\Controller
 {
 	public function index() {
 	
-		if($this->get())
-		{
+		if($this->get()) {
 			$this->display("admin", "login");
 		}
 
-		if($this->post())
-		{
+		if($this->post()) {
+			$domain = new domain\admin();
+			$this->model();
 			$this->display("admin", "index");
 		}
 
 	}
 
 	public function login() {
-		if($this->get())
-		{
-			echo "<meta charset='utf-8'> 错误！";
+		if($this->get()) {
+			echo "<meta charset='utf-8'> 非法访问！";
 		}
 
-		if($this->post())
-		{
+		if($this->post()) {
 			echo "post";
 		}
 	}
