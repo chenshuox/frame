@@ -1,7 +1,6 @@
 <?php
 namespace simple\application\controller;
 use simple\system\core\controller;
-use simple\service\domain;
 
 class Admin extends controller\Controller
 {
@@ -12,7 +11,6 @@ class Admin extends controller\Controller
 		}
 
 		if($this->post()) {
-			$domain = new domain\admin();
 			$this->model();
 			$this->display("admin", "index");
 		}
