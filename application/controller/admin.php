@@ -2,6 +2,7 @@
 namespace simple\application\controller;
 use simple\system\core\controller;
 
+
 class Admin extends controller\Controller
 {
 	public function index() {

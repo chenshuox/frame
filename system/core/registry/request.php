@@ -1,10 +1,8 @@
 <?php
 namespace simple\system\core\registry;
+use simple\system\core\request;
 
-//include "registry.php";
-//include "../request/request.php";
-
-class RequestRegistry extends Registry
+class Request extends registry\Registry
 {
 	private $values = array();
 	private static $instance;
@@ -18,14 +16,14 @@ class RequestRegistry extends Registry
 		return self::$instance;
 	}
 
-	protected function get ($key){
+	public function get ($key){
 		if(isset($this->values[$key])) {
 			return $this->values[$key];
 		}
 		return null;
 	}
 
-	protected function set ($key, $value){
+	public function set ($key, $value){
 		$this->values[$key] = $value;
 	}
 
@@ -33,19 +31,10 @@ class RequestRegistry extends Registry
 		return self::instance()->get("request");
 	}
 
-	public static function setRequest(\simple\request\Request $request) {
+	public static function setRequest(registry\Request $request) {
 		self::instance()->set("request", $request);
 	}
 }
-
-//实例化Request类
-RequestRegistry::setRequest(new \simple\request\Request());
-
-//返回Request类的实例
-$data = RequestRegistry::getRequest();
-
-//输出请求中action的值
-echo $data->getProperty("action");
 
 
 ?>
