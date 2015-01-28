@@ -5,7 +5,6 @@ use simple\system\core\database;
 use simple\service\mapper;
 use simple\service\domain;
 
-
 define("HTTP_PATH", "http://".$_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"]);
 define("URL", dirname(HTTP_PATH));
 
@@ -22,8 +21,5 @@ $username = $domain->getUsername();
 echo $username;
 $mapper = new mapper\Admin();
 $mapper->table()->delete();
-
-///$c = database\Mysql::instance();
-//$mapper->table()->insert()->data()->end();
 
 ?>
