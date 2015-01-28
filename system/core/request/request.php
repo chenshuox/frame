@@ -8,13 +8,16 @@ class Request
 
 	public function __construct() {
 		$this->init();
-		// 没看懂
-		// registry\Request::setRequest($this);
+
+		// registry\Request::setRequest($this);没看懂
 	}
 
 	private function init() {
 		if(isset($_SERVER["REQUEST_METHOD"])) {
 			foreach ($_REQUEST as $key => $value) {
+
+				//特殊字符转义
+				$value = addslashes($value);
 				$this->set($key, $value);
 			}
 			return true;

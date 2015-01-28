@@ -15,7 +15,6 @@ class Pathinfo
 			return true;
 		}
 		$this->pathinfo = $_SERVER["PATH_INFO"];
-
 		return $this->pathinfo = explode("/", $this->pathinfo);
 	}
 

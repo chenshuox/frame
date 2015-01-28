@@ -9,9 +9,13 @@ class Login extends controller\Command
 {	
 
 	public function execute(){
-		$context = new request\Request();
-		echo $user = $context->get("username");
-		echo $pass = $context->get("password");
+
+		$user = $this->get("username");
+		$pass = $this->get("password");
+
+		echo $user, $pass;
+		
+		return true;
 	}
 }
 
