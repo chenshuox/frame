@@ -25,7 +25,7 @@ class Home extends controller\Controller
 	}
 
 	public function show() {
-		echo "show";
+		$this->display("home", "show");
 	}
 
 	public function end() {

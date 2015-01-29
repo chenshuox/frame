@@ -21,7 +21,7 @@
 		</ul>
 	</form>
 	
-	<p><a href="<?php echo HTTP_PATH; ?>/admin/index">后台管理</a></p>
+	<p><a href="<?php echo HTTP_PATH; ?>/admin/index">后台管理</a> | <a href="<?php echo HTTP_PATH; ?>/home/show">互联网运营</a></p>
 	
 	<p><?php echo $powered; ?></p>
 
