@@ -26,6 +26,12 @@ class Mysql
 		return $this->link->query($sql);
 	}
 
+
+	//获取mysql信息
+	public function version() {
+		$this->link->mysql_get_server_info();
+	}
+
 	public function close(){
 		$this->link->close();
 	}
