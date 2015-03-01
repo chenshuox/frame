@@ -9,6 +9,8 @@ class Mysql
 	//数据库连接句柄
 	private $link;
 
+	private $result;
+
 	private function __construct() {
 		$data = common\Config::get("database");
 		$this->link = new \mysqli($data["mysqli"]["host"], $data["mysqli"]["user"], $data["mysqli"]["pass"],$data["mysqli"]["database"]);
@@ -26,13 +28,20 @@ class Mysql
 		return $this->link->query($sql);
 	}
 
+	public function fetch($sql) {
+		return $this->link->query($sql)->fetch_array();
+	}
 
 	//获取mysql信息
 	public function version() {
-		$this->link->mysql_get_server_info();
+		return $this->link->client_version;
 	}
 
-	public function close(){
+	public function info() {
+		return $this->link->client_info;
+	}
+
+	public function close() {
 		$this->link->close();
 	}
 

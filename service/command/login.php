@@ -12,10 +12,7 @@ class Login extends controller\Command
 
 		$user = $this->get("username");
 		$pass = $this->get("password");
-
-		echo $user, $pass;
 		
-		return true;
 	}
 }
 

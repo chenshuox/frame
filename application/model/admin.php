@@ -2,24 +2,29 @@
 namespace simple\application\model;
 use simple\service\domain;
 use simple\service\mapper;
-use simple\service\command;
+use simple\system\core\model;
 
-class Admin
+class Admin extends model\Model
 {
 
+
 	public function index() {
-		//--- 1.调用命令模式处理数据			command ---//
-
-		$command = new command\Login();
-		$command -> execute();
-
-		//--- 2.访问领域模型处理业务逻辑		domain  ---//
-
-
-		
-
-		//--- 3.访问数据库层					mapper  ---//
+		$user = $this->get("username");
+		$pass = $this->get("password");
+		$domain = new domain\Admin();
+		$domain->setUser($this->get("username"));
+		$domain->setPass(md5($this->get("password")));
+		$mapper = new mapper\Admin();
+		$data = $mapper->select($domain);
+		if(is_array($data)) {
+			$this->set("model", true);
+			setcookie($user, time()+3600);
+		}else{
+			$this->set("model", false);
+		}
 	}
+
+	
 
 	public function login() {
 

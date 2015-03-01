@@ -17,9 +17,9 @@ $app->run();
 //均为测试内容
 $domain = new domain\Admin();
 
-$username = $domain->getUsername();
-echo $username;
-$mapper = new mapper\Admin();
-$mapper->table()->delete();
+//$username = $domain->getUsername();
+//echo $username;
+//$mapper = new mapper\Admin();
+//$mapper->table()->delete();
 
 ?>

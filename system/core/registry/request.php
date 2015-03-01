@@ -1,8 +1,7 @@
 <?php
 namespace simple\system\core\registry;
-use simple\system\core\request;
 
-class Request extends registry\Registry
+class Request extends Registry
 {
 	private $values = array();
 	private static $instance;

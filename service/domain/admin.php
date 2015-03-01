@@ -16,20 +16,28 @@ class Admin extends model\Domain
 		return $this->id;
 	}
 
-	public function setUsername($username) {
+	public function setUser($username) {
 		$this->username = $username;
 	}
 
-	public function getUsername() {
+	public function getUser() {
 		return $this->username;
 	}
 
-	public function setPassword($password) {
+	public function setPass($password) {
 		$this->password = $password;
 	}
 
-	public function getPassword() {
+	public function getPass() {
 		return $this->password;
+	}
+
+	public function length() {
+
+	}
+
+	public function isEmpty() {
+		
 	}
 	
 }

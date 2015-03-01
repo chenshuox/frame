@@ -21,6 +21,12 @@ header h1{
 	background: #1AB667;
 	color: #ffffff;
 	font-weight: 100;
+	float: left;
+}
+header .menu{
+	line-height: 60px;
+	float: right;
+	padding-right: 10px;
 }
 header h1 i{
 	margin: 16px 10px 0 10px;

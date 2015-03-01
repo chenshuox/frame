@@ -13,7 +13,7 @@ class Home extends controller\Controller
 			$this->assign("webName", $array["webName"]);
 			$this->assign("description",$array["description"]);
 			$this->assign("powered",$array["powered"]);
-			$this->display("home", "index");
+			$this->view("home", "index");
 		}
 
 		if($this->post())
@@ -25,7 +25,7 @@ class Home extends controller\Controller
 	}
 
 	public function show() {
-		$this->display("home", "show");
+		$this->view("home", "show");
 	}
 
 	public function end() {

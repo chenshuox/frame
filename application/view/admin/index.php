@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>admin</title>
+	<title>后台管理</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>/resource/css/style.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>/resource/css/simple-line-icons.css">
@@ -9,9 +10,14 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>/resource/css/perfect-scrollbar.css">
 </head>
 <body>
+	<?php if(!empty($_COOKIE[$user])) { ?>
 	<header>
-		<h1><i class="icon-paper-plane"></i>足球迷</h1>
+		<h1><i class="icon-paper-plane"></i>BLOG</h1>
+		<div class="menu">
+			<p>欢迎你，admin <a href="<?php echo HTTP_PATH ?>/admin/logout">退出</a></p>
+		</div>
 	</header>
+
 	<section>
 		<aside id="aside">
 			<nav>
@@ -62,27 +68,30 @@
 			<iframe name="content" src=""></iframe>
 		</div>
 	</section>
-</body>
-<script src="<?php echo URL; ?>/resource/js/jquery.js"></script>
-<script src="<?php echo URL; ?>/resource/js/perfect-scrollbar.js"></script>
-<script>
-	$(function(){
-		$('#aside').perfectScrollbar();
-		$("#aside > nav > ul > li > a").click(function(){
-			$(this).parent("li").addClass("on").siblings().removeClass("on");
-			$(this).parent("li").siblings().find("ul").slideUp();
-			$(this).parent("li").siblings().find("ul").find("li").removeClass("on");
-			if($(this).next("ul").is(":visible")){
-        		$(this).next("ul").slideUp();
-		    }else{
-		        $(this).next("ul").slideDown();
-		    }
+	<script src="<?php echo URL; ?>/resource/js/jquery.js"></script>
+	<script src="<?php echo URL; ?>/resource/js/perfect-scrollbar.js"></script>
+	<script>
+		$(function(){
+			$('#aside').perfectScrollbar();
+			$("#aside > nav > ul > li > a").click(function(){
+				$(this).parent("li").addClass("on").siblings().removeClass("on");
+				$(this).parent("li").siblings().find("ul").slideUp();
+				$(this).parent("li").siblings().find("ul").find("li").removeClass("on");
+				if($(this).next("ul").is(":visible")){
+	        		$(this).next("ul").slideUp();
+			    }else{
+			        $(this).next("ul").slideDown();
+			    }
 
-		    $("#aside > nav > ul > li > ul > li").click(function(){
-				$(this).addClass("on").siblings().removeClass("on");
+			    $("#aside > nav > ul > li > ul > li").click(function(){
+					$(this).addClass("on").siblings().removeClass("on");
+				});
+				return false;
 			});
-			return false;
 		});
-	});
-</script>
+	</script>
+	<?php }else{ echo "非法访问！"; } ?>
+</body>
+
+
 </html>

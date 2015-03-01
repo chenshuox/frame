@@ -1,31 +1,33 @@
 <?php
 namespace simple\application\controller;
 use simple\system\core\controller;
+use simple\system\core\registry;
 
 
 class Admin extends controller\Controller
 {
 	public function index() {
-	
 		if($this->get()) {
-			$this->display("admin", "login");
+			$this->view("admin", "login");
 		}
-
 		if($this->post()) {
-			$this->model();
-			$this->display("admin", "index");
+			$this->model("admin", "index");
+			if(registry\Request::instance()->get("model")){
+				$user = $this->getdata("username");
+				$this->assign("user", $user);
+				$this->view("admin", "index");
+				//View::make("admin/index");
+			}else{
+				$this->assign("error", "用户名或者密码错误！");
+				$this->view("admin", "login");
+			}	
 		}
-
 	}
 
-	public function login() {
-		if($this->get()) {
-			echo "<meta charset='utf-8'> 非法访问！";
-		}
-
-		if($this->post()) {
-			echo "post";
-		}
+	public function logout() {
+		$user = $this->getdata("username");
+		setcookie($user, time()-3600);
+		$this->jump("home", "index");
 	}
 
 	public function show() {

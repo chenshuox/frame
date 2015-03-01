@@ -14,17 +14,15 @@ class Controller
 		$this->data[$key] = $value;
 	}
 
-	public function display($dir, $file) {
+	public function view($dir, $file) {
 		extract($this->data);
 		$path = new request\Pathinfo();
 		include "application/view/{$dir}/{$file}.php";
 	}
 
-	public function command($cmd) {
-		include "service/command/{$cmd}.php";
-		$classname = "\\simple\\service\\command\\{$cmd}";
-		$object = new $classname;
-		$object->execute();
+	public function jump($dir, $file){
+		$url = HTTP_PATH."/".$dir."/".$file;
+		header("location: $url");
 	}
 
 	public function model($class = null, $method= null){
@@ -43,6 +41,11 @@ class Controller
 		$classname = "\\simple\\application\\model\\{$model}";
 		$object = new $classname;
 		$object->$action();
+	}
+
+	protected function getdata($param) {
+		$context = new request\Request();
+		return $context->get($param);
 	}
 
 	public function get() {
