@@ -7,6 +7,8 @@ class Admin extends database\Mapper
 
 	public $table;
 
+	public $insert = "INSERT INTO pre_admin (username, password)VALUES(?, ?)";
+
 	public function __construct() {
 		parent::__construct();
 	}
