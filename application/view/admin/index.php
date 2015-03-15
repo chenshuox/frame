@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>/resource/css/perfect-scrollbar.css">
 </head>
 <body>
+	
 	<?php if(!empty($_COOKIE[$user])) { ?>
 	<header>
 		<h1><i class="icon-paper-plane"></i>BLOG</h1>

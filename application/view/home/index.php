@@ -1,15 +1,16 @@
+<?php use simple\system\core\view; ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title><?php echo $webName; ?></title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=7" />
-	<link rel="stylesheet" type="text/css" href="<?php echo URL ?>/resource/css/home/index.css" />
+	<?php view\View::link("home/index.css"); ?>
 </head>
 <body>
 <div id="warpper">
 	<header>
-		<h2><img src="<?php echo URL; ?>/resource/images/logo.png" width="200"></h2>
+		<h2><img src="<?php view\View::img('logo.png'); ?>" width="200"></h2>
 		<nav>
 			<ul>
 				<li><a href="">首页</a></li>
@@ -18,7 +19,7 @@
 				<li><a href="">Code</a></li>
 				<li><a href="">Photo</a></li>
 				<li><a href="">关于我</a></li>
-				<li><a href="<?php echo HTTP_PATH ?>/admin/index">管理</a></li>
+				<li><a href="<?php view\View::url('admin/index');?>">管理</a></li>
 			</ul>
 		</nav>
 		<div class="clear"></div>

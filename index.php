@@ -4,6 +4,7 @@ use simple\system\core\controller;
 use simple\system\core\database;
 use simple\service\mapper;
 use simple\service\domain;
+use simple\system\core\view;
 
 define("HTTP_PATH", "http://".$_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"]);
 define("URL", dirname(HTTP_PATH));
