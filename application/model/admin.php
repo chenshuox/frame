@@ -15,16 +15,13 @@ class Admin extends model\Model
 		$domain->setUser($this->get("username"));
 		$domain->setPass(md5($this->get("password")));
 		$mapper = new mapper\Admin();
-		$data = $mapper->select($domain);
-
-		/*
-		if(is_array($data)) {
-			$this->set("model", true);
+		if($mapper->select($domain)) {
+			$this->set("bool", true);
 			setcookie($user, time()+3600);
 		}else{
-			$this->set("model", false);
+			$this->set("bool", false);
 		}
-		*/
+		
 	}
 
 	

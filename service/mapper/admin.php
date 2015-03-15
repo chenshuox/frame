@@ -36,15 +36,14 @@ class Admin extends database\Mapper
 		//绑定结果集需要输出的字段
 		//$select-> bind_result($user, $pass);
 		
-		if($select->fetch()){
-			echo "yes";
-		}
+		$bool = $select->fetch();
 		
-
 		//释放结果集
 		$select->free_result();
 		//关闭
 		$select->close();
+		
+		return $bool;
 	}
 
 

@@ -11,10 +11,10 @@ class Admin extends controller\Controller
 			$this->view("admin", "login");
 		}
 		if($this->post()) {
-			
+
 			//调用模型
 			$this->model("admin", "index");
-			if(registry\Request::instance()->get("model")){
+			if(registry\Request::instance()->get("bool")){
 				$user = $this->getdata("username");
 				$this->assign("user", $user);
 				$this->view("admin", "index");
