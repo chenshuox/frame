@@ -10,14 +10,11 @@ class Mapper
 	
 	
 	public function __construct() {
-		$this->db = Mysql::instance();
+		$link = new Mysql;
+		return $this->db = $link->link;
 	}
 
 	public function find($id) {
-		
-	}
-
-	public function select() {
 		
 	}
 
@@ -42,7 +39,7 @@ class Mapper
 	}
 
 	public function __destruct() {
-		$this->db->close();
+		//$this->db->close();
 	}
 	
 }

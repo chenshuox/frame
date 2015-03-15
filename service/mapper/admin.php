@@ -7,29 +7,46 @@ class Admin extends database\Mapper
 
 	public $table;
 
-	public $insert = "INSERT INTO pre_admin (username, password)VALUES(?, ?)";
+	const INSERT = "INSERT INTO pre_admin (username, password) VALUES (?, ?)";
+	const SELECT = "SELECT username, password FROM pre_admin WHERE username = ? AND password = ? AND aid = ?";
+	
 
 	public function __construct() {
 		parent::__construct();
 	}
+
 	public function insert($object) {
-		$query = "INSERT INTO pre_admin (username, password) VALUES ('{$object->getUser()}', '{$object->getPass()}')";
-		return $this->query($query);
+		$insert = $this->db->prepare(self::INSERT);
+		$user = $object->getUser();
+		$pass = $object->getPass();
+		$insert->bind_param('ss',$user,$pass);
+		$insert->execute();
+		$insert->close();
 	}
 
 	public function select($object) {
-		$query = "SELECT * FROM pre_admin WHERE username = '{$object->getUser()}' AND password = '{$object->getPass()}'";
-		return $this->fetch($query);
-	}
+		$user = $object->getUser();
+		$pass = $object->getPass();
+		$aid = 1;
+		$select = $this->db->prepare(self::SELECT);
+		//绑定参数
+		$select -> bind_param('ssi',$user, $pass, $aid);
+		$select->execute();
 
-	public function delete() {
+		//绑定结果集需要输出的字段
+		//$select-> bind_result($user, $pass);
 		
+		if($select->fetch()){
+			echo "yes";
+		}
+		
+
+		//释放结果集
+		$select->free_result();
+		//关闭
+		$select->close();
 	}
 
-
-	public function where() {
-
-	}
 
 }
 

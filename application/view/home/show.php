@@ -1,3 +1,4 @@
+<?php use simple\system\core\view; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +7,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=7" />
 </head>
 <body>
-<img src="<?php echo URL; ?>/resource/images/internet.gif" width="100%">
+<img src="<?php view\View::img('internet.gif'); ?>" width="100%">
 </body>
 </html>

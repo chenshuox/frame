@@ -7,21 +7,32 @@ class Mysql
 		
 	private static $instance;
 	//数据库连接句柄
-	private $link;
+	public $link;
 
 	private $result;
 
-	private function __construct() {
+	public function __construct() {
 		$data = common\Config::get("database");
 		$this->link = new \mysqli($data["mysqli"]["host"], $data["mysqli"]["user"], $data["mysqli"]["pass"],$data["mysqli"]["database"]);
 		$this->link->set_charset($data["mysqli"]["char"]);
-	}
 
+		return $this->link;
+	}
+	/*
 	public static function instance() {
 		if(!isset(self::$instance)) {
 			self::$instance = new self();
 		}
 		return self::$instance;
+	}
+	*/
+
+	public function prepare($query){
+		$this->link->prepare($query);
+	}
+
+	public function bind(){
+
 	}
 
 	public function execute($sql) {
