@@ -10,11 +10,11 @@
 </head>
 <body>
 	
-	<?php if(!empty($_COOKIE[$user])) { ?>
+	<?php if(isset($_SESSION["manage"])) { ?>
 	<header>
-		<h1><i class="icon-paper-plane"></i>BLOG</h1>
+		<h1><i class="icon-paper-plane"></i>Football</h1>
 		<div class="menu">
-			<p>欢迎你，admin <a href="<?php echo HTTP_PATH ?>/admin/logout">退出</a></p>
+			<p> 欢迎你管理员，<?php echo $_SESSION["manage"]; ?> <a href="<?php echo HTTP_PATH ?>">站点首页</a> <a href="<?php echo HTTP_PATH ?>/common/logout">退出</a></p>
 		</div>
 	</header>
 
@@ -26,7 +26,8 @@
 					<li>
 						<a href="" target="content"><i class="icon-book-open text-primary-lter"></i>俱乐部</a>
 						<ul>
-							<li><a href="" target="content"><i class="fa fa-angle-right text-xs"></i>添加俱乐部</a></li>
+							<li><a href="<?php echo HTTP_PATH ?>/club/add" target="content"><i class="fa fa-angle-right text-xs"></i>联赛管理</a></li>
+							<li><a href="<?php echo HTTP_PATH ?>/club/add" target="content"><i class="fa fa-angle-right text-xs"></i>添加俱乐部</a></li>
 							<li><a href="" target="content"><i class="fa fa-angle-right text-xs"></i>话题管理</a></li>
 							<li><a href="http://www.baidu.com" target="content"><i class="fa fa-angle-right text-xs"></i>添加分类</a></li>
 							<li><a href="http://www.so.com" target="content"><i class="fa fa-angle-right text-xs"></i>分类管理</a></li>
@@ -65,7 +66,7 @@
 			</nav>
 		</aside>
 		<div id="content">
-			<iframe name="content" src=""></iframe>
+			<iframe name="content" src="<?php echo HTTP_PATH; ?>/admin/init"></iframe>
 		</div>
 	</section>
 	<script src="<?php echo URL; ?>/resource/js/jquery.js"></script>

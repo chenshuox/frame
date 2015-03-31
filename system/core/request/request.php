@@ -8,8 +8,6 @@ class Request
 
 	public function __construct() {
 		$this->handle();
-
-		// registry\Request::setRequest($this);没看懂
 	}
 
 	private function handle() {

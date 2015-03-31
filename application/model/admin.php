@@ -17,7 +17,7 @@ class Admin extends model\Model
 		$mapper = new mapper\Admin();
 		if($mapper->select($domain)) {
 			$this->set("bool", true);
-			setcookie($user, time()+3600);
+			$_SESSION["manage"] = $user;
 		}else{
 			$this->set("bool", false);
 		}

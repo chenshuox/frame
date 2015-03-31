@@ -9,7 +9,7 @@
 <body>
 	<section>
 		<form id="from" action="<?=URL?>/index.php/admin/index" method="post">
-			<h3>博客管理</h3>
+			<h3>后台管理</h3>
 			<p><input type="text" name="username" placeholder="username"></p>
 			<p><input type="password" name="password" placeholder="password"></p>
 			<?php if(!empty($error)) { ?>

@@ -6,12 +6,21 @@ use simple\system\core\registry;
 
 class Admin extends controller\Controller
 {
+
+	public function init(){
+		$this->view("admin","init");
+	}
+
 	public function index() {
+		session_start();
 		if($this->get()) {
-			$this->view("admin", "login");
+			if(isset($_SESSION["manage"])){
+				$this->view("admin", "index");
+			}else{
+				$this->view("admin", "login");
+			}
 		}
 		if($this->post()) {
-
 			//调用模型
 			$this->model("admin", "index");
 			if(registry\Request::instance()->get("bool")){

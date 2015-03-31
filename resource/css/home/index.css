@@ -3,174 +3,78 @@
 	padding: 0px;
 }
 body{
-	background: #eee;
+	background: url(../../../resource/images/14.jpg) no-repeat #62778C;
+	background-size: 100%;
 }
 .clear{
 	clear: both;
 }
+.warpper{
+	background: #56bc8a;
+}
 #warpper{
-	background: #fff;
-	width: 85%;
-	min-width: 960px;
-	margin: 0 auto;
+	
+	
 }
-#warpper header{
-	padding: 20px 60px;
-
+#header{
+	height: 50px;
+	padding-top: 10px;
+	padding-right: 10px;
 }
-#warpper header h2{
-	font-size: 48px;
-	line-height: 1.5em;
-	float: left;
-}
-#warpper header p{
-	font-size: 12px;
-	color: #666;
-	line-height: 2em;
-
-}
-#warpper header nav{
-	float: right;
-	padding-top: 20px;
-}
-#warpper header nav ul{
-	height: 40px;
-}
-#warpper header nav ul li{
-	float: left;
-	font-size: 14px;
-	line-height: 40px;
-	list-style-type: none;
-	padding: 0 15px;
-}
-#warpper header nav ul li a{
-	color: #666;
-	text-decoration: none;
-}
-#warpper header nav ul li a:hover{
-	color: #000;
-}
-#warpper section{
-	padding: 0 40px;
-}
-#warpper section article{
-	width: 72%;
-	border-top: 1px solid #ccc;
-	padding-top: 15px;
-	float: left;
-}
-#warpper section article dl{
-	border-bottom: 1px solid #eee;
-	padding: 30px 0px;
-}
-#warpper section article dt{
-	font-size: 18px;
-	line-height: 40px;
-}
-#warpper section article dt a{
-	color: #1565b2;
-	text-decoration: none;
-}
-#warpper section article dd img{
-	width: 100%;
-	padding-bottom: 10px;
-}
-#warpper section article dd .time{
-	color: #999;
-	line-height: 2.5em;
-	font-size: 12px;
-}
-#warpper section article dd .description{
-	color: #666;
-	line-height: 2em;
-	font-size: 14px;
-}
-#warpper section aside{
-	width: 24%;
-	height: 200px;
-	float: right;
-	border-top: 1px solid #ccc;
-	padding-top: 60px;
-}
-#warpper section aside form{
-	width: 100%;
+#header p{
 	height: 50px;
 }
-#warpper section aside form input[type=text]{
-	border: 1px solid #ccc;
-	width: 74%;
-	padding: 5px;
-	font-size: 12px;
-	outline: none;
-	float: left;
-}
-#warpper section aside form input[type=submit]{
-	width: 20%;
-	padding: 5px;
-	border: 1px solid #090;
-	font-size: 12px;
-	background: #0a0;
-	color: #fff;
+#header p a{
 	float: right;
-}
-#warpper section aside h4{
-	padding-bottom: 10px;
-	padding-top: 10px;
-	font-size: 16px;
-	color: #1565b2;
-}
-#warpper section aside ul{
-	padding-bottom: 10px;
-}
-#warpper section aside ul li{
-	font-size: 12px;
-	line-height: 20px;
-	list-style-type: none;
-}
-#warpper section aside ul li a{
-	text-decoration: none;
-	color: #666;
-}
-#warpper section aside ol{
-	padding-bottom: 10px;
-	padding-left: 14px;
-}
-#warpper section aside ol li{
-	font-size: 12px;
-	line-height: 20px;
-
-}
-#warpper section aside ul li span{
-	padding-left: 10px;
-	color: #ccc;
-}
-#warpper section aside ol li a{
-	text-decoration: none;
-	color: #666;
-}
-#warpper section aside .tag a{
-	padding: 5px 10px;
-	background: #ccc;
-	border-radius: 6px;
+	padding: 8px 30px;
 	color: #fff;
+	background: #1AB667;
+	margin-left: 10px;
 	text-decoration: none;
-	font-size: 12px;
-	float: left;
-	margin-bottom: 10px;
-	margin-right: 5px;
+	border-radius: 2px;
 }
-#warpper section aside .tag a:hover{
-	background: #1565b2;
-}
-#warpper footer{
-	padding: 20px 0px;
-}
-#warpper footer p{
+#section h1{
+	color: #1AB667;
+	line-height: 40px;
+	font-size: 60px;
 	text-align: center;
-	font-size: 12px;
-	line-height: 2em;
-	color: #888;
+	line-height: 80px;
 }
-#warpper footer p a{
+#section form p{
+	margin-top: 10px;
+}
+#section p.desc{
+	text-align: center;
+	line-height: 80px;
+	font-size: 18px;
+	color: #000;
+}
+#section form{
+	width: 300px;
+	margin: 0 auto;
+}
+#section form input[type=text]{
+	width: 280px;
 	color: #555;
+	font-size: 16px;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 3px;
+}
+#section form input[type=submit]{
+	width: 300px;
+	padding: 10px 0px;
+	border: none;
+	font-size: 16px;
+	color: #fff;
+	background: #1AB667;
+	border-radius: 3px;
+	cursor: pointer;
+}
+#footer p{
+	text-align: center;
+	color: #a00;
+	font-size: 12px;
+	line-height: 20px;
 }

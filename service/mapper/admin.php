@@ -7,8 +7,8 @@ class Admin extends database\Mapper
 
 	public $table;
 
-	const INSERT = "INSERT INTO pre_admin (username, password) VALUES (?, ?)";
-	const SELECT = "SELECT username, password FROM pre_admin WHERE username = ? AND password = ? AND aid = ?";
+	const INSERT = "INSERT INTO manage (username, password) VALUES (?, ?)";
+	const SELECT = "SELECT username, password FROM manage WHERE username = ? AND password = ? AND id = ?";
 	
 
 	public function __construct() {

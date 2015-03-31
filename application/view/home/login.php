@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>足球迷</title>
+	<title><?php echo $webName; ?></title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 	<meta http-equiv="X-UA-Compatible" content="IE=7" />
@@ -22,10 +22,8 @@
 		<form>
 			<p><input type="text" placeholder="用户名"></p>
 			<p><input type="text" placeholder="密码"></p>
-			<p><input type="text" placeholder="确认密码"></p>
-			<p><input type="submit" value="注册"></p>
+			<p><input type="submit" value="登录"></p>
 		</form>
-		<p class="desc">40万足球迷期待你的加入！</p>
 	</div>
 	<div id="footer">
 		<p>zuqiu.im 2015</p>

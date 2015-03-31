@@ -28,6 +28,10 @@ class Home extends controller\Controller
 		$this->view("home", "show");
 	}
 
+	public function login() {
+		$this->view("home", "login");
+	}
+
 	public function end() {
 		header("content-type:text/html; charset=utf-8");
 		echo "<!DOCTYPE html>\n<html>\n\t<title>网站维护中，请稍后访问！</title>\nchenshuo";

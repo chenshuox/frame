@@ -1,0 +1,95 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+@-webkit-keyframes success
+{
+	0% { opacity: 1; }
+	100% { opacity: 0;  }
+}
+@-webkit-keyframes error
+{
+	0% { opacity: 1; top: 100px; left: 0px; font-size: 30px;}
+	100% { opacity: 0; top: 0px;}
+}
+input, textarea, select{
+	outline: none;
+}
+#content{
+	margin: 7px;
+	background: #fff;
+	padding: 10px;
+	overflow: hidden;
+}
+#content table{
+	font-size: 14px;
+	padding: 5px;
+	border-spacing: 0px;
+	width: 100%;
+}
+#content table tr td{
+	padding: 10px 0px;
+}
+#content table tr:nth-child(odd){
+	background: #f8f8f8;
+}
+#content table tr:nth-child(even){
+	background: #ffffff;
+}
+#content table tr td:nth-child(1){
+	width: 20%;
+	padding-right: 40px;
+	color: #888;
+	text-align: right;
+}
+
+#content table textarea{
+	width: 90%;
+	border: 1px solid #ccc;
+	font-size: 14px;
+	padding: 5px;
+}
+#content input[type=text]{
+	padding: 3px;
+	border: 1px solid #ccc;
+	width: 20em;
+	font-size: 14px;
+}
+#content input[type=date]{
+	padding: 3px;
+	border: 1px solid #ccc;
+	width: 20em;
+	font-size: 14px;
+}
+#content input[type=submit]{
+	padding: 5px 20px;
+	border: 1px solid #0a0;
+	background: #0b0;
+	color: #fff;
+	border-radius: 3px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+#content input[type=reset]{
+	padding: 5px 20px;
+	border: 1px solid #aaa;
+	background: #bbb;
+	color: #fff;
+	border-radius: 3px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+.dalog{
+	opacity: 0;
+	position: absolute;
+	background: #0a0;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+	padding: 10px 0px;
+
+	-webkit-animation: success 3s;
+}
