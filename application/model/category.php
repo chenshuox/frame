@@ -4,15 +4,15 @@ use simple\service\domain;
 use simple\service\mapper;
 use simple\system\core\model;
 
-class Club extends model\Model
+class Category extends model\Model
 {
-	public $data;
 
-	public function selectMatch() {
-		$mapper = new mapper\Match();
+	public function select() {
+		$mapper = new mapper\Category();
 		$data = $mapper->find();
 		$this->set("data", $data);
 	}
+
 }
 
 ?>

@@ -15,7 +15,7 @@ class Admin extends model\Model
 		$domain->setUser($this->get("username"));
 		$domain->setPass(md5($this->get("password")));
 		$mapper = new mapper\Admin();
-		if($mapper->select($domain)) {
+		if($mapper->find($domain)) {
 			$this->set("bool", true);
 			$_SESSION["manage"] = $user;
 		}else{

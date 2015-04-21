@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	"mysqli"=>array("host"=>"localhost", "user"=>"root", "pass"=>"root", "database"=>"football", "char"=>"utf8", "prefix"=>"pre_"),
+	"mysqli"=>array("host"=>"localhost", "user"=>"root", "pass"=>"root", "database"=>"blogs", "char"=>"utf8", "prefix"=>""),
 );
 
 ?>

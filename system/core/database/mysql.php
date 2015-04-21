@@ -11,36 +11,21 @@ class Mysql
 
 	private $result;
 
-	public function __construct() {
+	private function __construct() {
 		$data = common\Config::get("database");
 		$this->link = new \mysqli($data["mysqli"]["host"], $data["mysqli"]["user"], $data["mysqli"]["pass"],$data["mysqli"]["database"]);
 		$this->link->set_charset($data["mysqli"]["char"]);
-
-		return $this->link;
 	}
-	/*
+	
 	public static function instance() {
 		if(!isset(self::$instance)) {
 			self::$instance = new self();
 		}
 		return self::$instance;
 	}
-	*/
 
-	public function prepare($query){
-		$this->link->prepare($query);
-	}
-
-	public function bind(){
-
-	}
-
-	public function execute($sql) {
+	public function query($sql) {
 		return $this->link->query($sql);
-	}
-
-	public function fetch($sql) {
-		return $this->link->query($sql)->fetch_array();
 	}
 
 	//获取mysql信息

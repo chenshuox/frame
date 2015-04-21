@@ -2,7 +2,7 @@
 namespace simple\service\mapper;
 use simple\system\core\database;
 
-class Admin extends database\Mapper
+class Category extends database\Mapper
 {
 
 	public $table;
@@ -18,10 +18,8 @@ class Admin extends database\Mapper
 		
 	}
 
-	public function find($object) {
-		$user = $object->getUser();
-		$pass = $object->getPass();
-		$this->select("username, password")->table("manage")->where("username='$user' AND password='$pass'")->fetch();
+	public function find() {
+		$this->select("*")->table("category")->fetchAll();
 		return $this->data;
 	}
 

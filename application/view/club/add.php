@@ -19,13 +19,9 @@
 				<td>联赛 / 球场</td>
 				<td>
 					<select>
-						<option>西班牙足球甲级联赛</option>
-						<option>西班牙足球甲级联赛</option>
-						<option>西班牙足球甲级联赛</option>
-						<option>西班牙足球甲级联赛</option>
-						<option>西班牙足球甲级联赛</option>
-						<option>西班牙足球甲级联赛</option>
-						<option>西班牙足球甲级联赛</option>
+						<?php foreach($data as $v) {?>
+						<option><?php echo $v["name"]; ?></option>
+						<?php } ?>
 					</select>
 
 					<select>

@@ -4,8 +4,8 @@
 }
 @-webkit-keyframes success
 {
-	0% { opacity: 1; }
-	100% { opacity: 0;  }
+	0%   { opacity: 1; }
+	100% { opacity: 0; }
 }
 @-webkit-keyframes error
 {
@@ -28,7 +28,10 @@ input, textarea, select{
 	width: 100%;
 }
 #content table tr td{
-	padding: 10px 0px;
+	padding: 10px 5px;
+}
+#content table tr td span{
+	color: #999;
 }
 #content table tr:nth-child(odd){
 	background: #f8f8f8;
@@ -36,13 +39,15 @@ input, textarea, select{
 #content table tr:nth-child(even){
 	background: #ffffff;
 }
-#content table tr td:nth-child(1){
-	width: 20%;
-	padding-right: 40px;
-	color: #888;
-	text-align: right;
+#content table td a.edit{
+	padding: 5px 7px;
+	color: #fff;
+	text-decoration: none;
+	font-size: 12px;
+	background: #8bbf61;
+	border-radius: 5px;
+	margin-right: 5px;
 }
-
 #content table textarea{
 	width: 90%;
 	border: 1px solid #ccc;
@@ -70,6 +75,9 @@ input, textarea, select{
 	margin-right: 10px;
 	cursor: pointer;
 }
+#content input[type=submit]:focus{
+	box-shadow: 0px 0px 3px #333 inset;
+}
 #content input[type=reset]{
 	padding: 5px 20px;
 	border: 1px solid #aaa;
@@ -83,13 +91,13 @@ input, textarea, select{
 	opacity: 0;
 	position: absolute;
 	background: #0a0;
-	width: 100%;
-	top: 0px;
-	left: 0px;
+	top: 200px;
+	left: 200px;
 	text-align: center;
-	font-size: 16px;
+	font-size: 20px;
 	color: #fff;
-	padding: 10px 0px;
-
+	padding: 40px 10px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 3px #888;
 	-webkit-animation: success 3s;
 }

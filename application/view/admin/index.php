@@ -12,7 +12,7 @@
 	
 	<?php if(isset($_SESSION["manage"])) { ?>
 	<header>
-		<h1><i class="icon-paper-plane"></i>Football</h1>
+		<h1><i class="icon-paper-plane"></i>CHENSHUO</h1>
 		<div class="menu">
 			<p> 欢迎你管理员，<?php echo $_SESSION["manage"]; ?> <a href="<?php echo HTTP_PATH ?>">站点首页</a> <a href="<?php echo HTTP_PATH ?>/common/logout">退出</a></p>
 		</div>
@@ -23,24 +23,25 @@
 			<nav>
 				<h3>Discover</h3>
 				<ul>
+					<li><a href=""><i class="icon-settings text-primary-lter"></i>设置</a></li>
 					<li>
-						<a href="" target="content"><i class="icon-book-open text-primary-lter"></i>俱乐部</a>
+						<a href="" target="content"><i class="icon-book-open text-primary-lter"></i>文章</a>
 						<ul>
-							<li><a href="<?php echo HTTP_PATH ?>/club/add" target="content"><i class="fa fa-angle-right text-xs"></i>联赛管理</a></li>
-							<li><a href="<?php echo HTTP_PATH ?>/club/add" target="content"><i class="fa fa-angle-right text-xs"></i>添加俱乐部</a></li>
+							<li><a href="<?php echo HTTP_PATH ?>/article/add" target="content"><i class="fa fa-angle-right text-xs"></i>添加新文章</a></li>
+							<li><a href="<?php echo HTTP_PATH ?>/article/edit" target="content"><i class="fa fa-angle-right text-xs"></i>文章管理</a></li>
 							<li><a href="" target="content"><i class="fa fa-angle-right text-xs"></i>话题管理</a></li>
 							<li><a href="http://www.baidu.com" target="content"><i class="fa fa-angle-right text-xs"></i>添加分类</a></li>
 							<li><a href="http://www.so.com" target="content"><i class="fa fa-angle-right text-xs"></i>分类管理</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="" target="content"><i class="icon-user text-primary-lter"></i>用户</a>
+						<a href="" target="content"><i class="icon-user text-primary-lter"></i>栏目</a>
 						<ul>
-							<li><a href="http://www.so.com" target="content"><i class="fa fa-angle-right text-xs"></i>添加用户</a></li>
-							<li><a href="http://www.so.com" target="content"><i class="fa fa-angle-right text-xs"></i>用户管理</a></li>
+							<li><a href="<?php echo HTTP_PATH ?>/category/set" target="content"><i class="fa fa-angle-right text-xs"></i>管理栏目</a></li>
+							<li><a href="http://www.so.com" target="content"><i class="fa fa-angle-right text-xs"></i>新增栏目</a></li>
 						</ul>
 					</li>
-					<li><a href=""><i class="icon-settings text-primary-lter"></i>设置</a></li>
+					
 					<li><a href=""><i class="icon-cloud-download text-primary-lter"></i>球队</a></li>
 					<li><a href=""><i class="icon-drawer text-primary-lter"></i>工具</a></li>
 					<li>
