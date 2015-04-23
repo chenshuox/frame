@@ -53,8 +53,15 @@ class Mapper
 		return $this;
 	}
 
+	public function set($data){
+		$this->query .= "SET ".$data." ";
+		return $this;
+	}
+
 	public function query() {
+		$this->query;
 		$this->result = $this->link->query($this->query);
+		return $this->result;
 	}
 
 	public function fetch(){
@@ -63,9 +70,12 @@ class Mapper
 
 	public function fetchAll() {
 		$result = $this->link->query($this->query);
+		
 		while($row = $result->fetch_array()){
 			$data[] = $row;
 		}
+		//如果结果集为空，返回空数组
+		if($result->num_rows == 0){ $data = array(); }
 		$this->data = $data;
 	}
 
@@ -75,20 +85,22 @@ class Mapper
 		return $this;
 	}
 
+	public function order($order) {
+		$this->query .= "ORDER BY ".$order;
+		return $this;
+	}
+
 	public function update(){
+		$this->query .= "UPDATE ";
 		return $this;
 	}
 
 	public function delete(){
+		$this->query .= "DELETE FROM ";
 		return $this;
 	}
 
-	
 
-
-	public function __destruct() {
-		$this->link->close();
-	}
 	
 }
 

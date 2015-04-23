@@ -13,11 +13,11 @@
 	<?php echo $result; ?>
 	</div>
 <?php } ?>
-	<form action="<?php URL; ?>" method="post">
+	<form action="<?php view\View::url("category/addCate"); ?>" method="post">
 	<table>
 		<tr>
 			<td>父级栏目</td>
-			<td><?php echo $data["name"]; ?></td>
+			<td>一级栏目</td>
 		</tr>
 		<tr>
 			<td>栏目名称</td>

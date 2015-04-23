@@ -13,23 +13,19 @@
 	<?php echo $result; ?>
 	</div>
 <?php } ?>
-	<form action="<?php URL; ?>" method="post">
+	<form action="<?php view\View::url('category/edit'); ?>/<?php echo $data['id']; ?>" method="post">
 	<table>
 		<tr>
-			<td>父级栏目</td>
-			<td><?php echo $data["name"]; ?></td>
-		</tr>
-		<tr>
 			<td>栏目名称</td>
-			<td><input type="text" name="name"></td>
+			<td><input type="text" name="name" value="<?php echo $data['name']; ?>"></td>
 		</tr>
 		<tr>
 			<td>英文名称</td>
-			<td><input type="text" name="english"></td>
+			<td><input type="text" name="english" value="<?php echo $data['english']; ?>"></td>
 		</tr>
 		<tr>
 			<td>栏目介绍</td>
-			<td><textarea name="description"></textarea></td>
+			<td><textarea name="description"><?php echo $data['description']; ?></textarea></td>
 		</tr>
 		<tr>
 			<td>栏目类型</td>
@@ -42,7 +38,7 @@
 		</tr>
 		<tr>
 			<td><input type="reset" value="重置"></td>
-			<td><input type="submit" value="添加"></td>
+			<td><input type="submit" value="修改"></td>
 		</tr>
 	</table>
 	</form>

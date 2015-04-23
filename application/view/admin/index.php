@@ -38,7 +38,7 @@
 						<a href="" target="content"><i class="icon-user text-primary-lter"></i>栏目</a>
 						<ul>
 							<li><a href="<?php echo HTTP_PATH ?>/category/set" target="content"><i class="fa fa-angle-right text-xs"></i>管理栏目</a></li>
-							<li><a href="http://www.so.com" target="content"><i class="fa fa-angle-right text-xs"></i>新增栏目</a></li>
+							<li><a href="<?php echo HTTP_PATH ?>/category/addCate" target="content"><i class="fa fa-angle-right text-xs"></i>新增栏目</a></li>
 						</ul>
 					</li>
 					
