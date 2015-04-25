@@ -118,7 +118,33 @@ class Category extends controller\Controller
 		$cate = new mapper\Category();
 		$data = $cate->id($id);
 		$this->assign("data", $data);
-		$this->view("category", "edit");	
+		$this->view("category", "edit");
+	}
+
+	public function show() {
+		$mapper = new mapper\Category();
+		$data = $mapper->firstCate();
+		$this->assign("data", $data);
+		
+
+		//获取当前导航传过来的ID
+		$get = new request\Pathinfo();
+		$id = $get->get(3);
+
+		$cate = $mapper->parentid($id);
+		if(empty($cate)) {
+			$more = $mapper->id($id);
+			$this->assign("more", $more);
+			$value = $mapper->article($id);
+			$this->assign("value", $value);
+		}else{
+			$this->assign("cate", $cate);
+			$value = $mapper->childList($id);
+			$this->assign("value", $value);
+		}
+		
+
+		$this->view("category", "show");
 	}
 
 

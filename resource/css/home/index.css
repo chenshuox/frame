@@ -1,0 +1,128 @@
+@-webkit-keyframes photo{
+	0%  { background: rgba(255,255,255,0); }
+	100%{ background: rgba(255,255,255,0.5); }
+}
+@-webkit-keyframes text{
+	0%  { line-height: 200px; }
+	100%{ line-height: 250px; }
+}
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	font-family: "STXihei";
+	height: 100%;
+	background: url(../../../resource/images/background.jpg) no-repeat #fff center 0px;
+	background-size: 100%;
+	background-attachment: fixed;
+}
+img{
+	border: 0px;
+}
+.clear{
+	clear: both;
+}
+#warpper{
+	background: rgba(0,0,0,0.3);
+}
+#header{
+	width: 80%;
+	margin: 0 auto;
+}
+#header h1{
+	color: #fff;
+	float: left;
+	font-size: 34px;
+	line-height: 140px;
+	font-weight: 200;
+}
+#header ul{
+	float: right;
+}
+#header ul li{
+	float: left;
+	list-style-type: none;
+	line-height: 140px;
+	font-size: 14px;
+	padding: 0 10px;
+	color: #fff;
+}
+#header ul li:hover{
+	color: #000;
+}
+#header ul li a{
+	font-size: 14px;
+	color: #fff;
+	text-decoration: none;
+	padding: 0 8px;
+}
+#header h3{
+	clear: both;
+	text-align: center;
+	line-height: 100px;
+	font-size: 30px;
+	color: #fff;
+	text-shadow: 0px 2px 0px #999;
+	padding-top: 100px;
+	font-weight: 200;
+}
+#header p{
+	clear: both;
+	text-align: center;
+	line-height: 40px;
+	font-size: 10px;
+	color: #ccc;
+	padding-bottom: 100px;
+}
+#section{
+	width: 80%;
+	margin: 0 auto;
+}
+#section .left{
+	width: 50%;
+	float: left;
+}
+#section .right{
+	width: 50%;
+	float: right;
+}
+#section .container{
+	width: 100%;
+	position: relative;
+
+}
+#section .container .content{
+	background: rgba(255, 255, 255, 0.5);
+	position: absolute;
+	top:8px;
+	left: 8px;
+	bottom: 10px;
+	right: 8px;
+	display: none;
+}
+#section .container .content p{
+	text-align: center;
+	color: #333;
+	font-size: 20px;
+	line-height: 250px;
+	-webkit-animation: text 1s;
+}
+#section .container a:hover .content{
+	display: block;
+	-webkit-animation: photo 1s;
+}
+#section .container img{
+	width: 100%;
+	float: left;
+}
+#footer{
+	margin-top: 40px;
+	background: #000;
+}
+#footer p{
+	line-height: 60px;
+	text-align: center;
+	color: #666;
+	font-size: 12px;
+}

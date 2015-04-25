@@ -26,9 +26,9 @@ class Mapper
 		$array = explode("\\", $className);
 		$data = common\Config::get("database");
 		if(empty($table)){
-			$this->query .= "`".$data["mysqli"]["prefix"].strtolower(end($array))."` ";
+			$this->query .= $data["mysqli"]["prefix"].strtolower(end($array));
 		}else{
-			$this->query .= "`".$data["mysqli"]["prefix"].$table."` ";
+			$this->query .= $data["mysqli"]["prefix"].$table;
 		}
 		return $this;
 	}
@@ -59,16 +59,18 @@ class Mapper
 	}
 
 	public function query() {
-		$this->query;
+		//echo $this->query;
 		$this->result = $this->link->query($this->query);
 		return $this->result;
 	}
 
 	public function fetch(){
+		//echo $this->query;
 		$this->data = $this->link->query($this->query)->fetch_array();
 	}
 
 	public function fetchAll() {
+		//echo $this->query;
 		$result = $this->link->query($this->query);
 		
 		while($row = $result->fetch_array()){
@@ -81,12 +83,12 @@ class Mapper
 
 
 	public function where($where){
-		$this->query .= "WHERE ".$where;
+		$this->query .= " WHERE ".$where;
 		return $this;
 	}
 
 	public function order($order) {
-		$this->query .= "ORDER BY ".$order;
+		$this->query .= " ORDER BY ".$order;
 		return $this;
 	}
 

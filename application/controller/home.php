@@ -2,26 +2,24 @@
 namespace simple\application\controller;
 use simple\system\core\controller;
 use simple\system\core\common;
+use simple\service\mapper;
 
 class Home extends controller\Controller
 {
+
+	public function init() {
+		$array = common\Config::get("web");
+		$this->assign("webName", $array["webName"]);
+		$this->assign("description",$array["description"]);
+		$this->assign("powered",$array["powered"]);
+		$this->view("home", "index");
+	}
+
 	public function index() {
-	
-		if($this->get())
-		{
-			$array = common\Config::get("web");
-			$this->assign("webName", $array["webName"]);
-			$this->assign("description",$array["description"]);
-			$this->assign("powered",$array["powered"]);
-			$this->view("home", "index");
-		}
-
-		if($this->post())
-		{
-			//处理登陆数据过滤
-			$this->model();
-		}
-
+		$mapper = new mapper\Category();
+		$data = $mapper->firstCate();
+		$this->assign("data", $data);
+		$this->view("home", "index");
 	}
 
 	public function show() {

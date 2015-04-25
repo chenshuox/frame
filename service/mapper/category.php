@@ -49,6 +49,11 @@ class Category extends database\Mapper
 		return $this->data;
 	}
 
+	public function parentid($id) {
+		$this->select("*")->table("category")->where("parentid=$id")->fetchAll();
+		return $this->data;
+	}
+
 	public function save() {
 		$context = new request\Request();
 		$name = $context->get("name");
@@ -59,7 +64,7 @@ class Category extends database\Mapper
 		$get = new request\Pathinfo();
 		$id = $get->get(3);
 
-		$result = $this->update()->table("category")->set("name='$name', english='$english', description='$description', type=$type")->where("id = $id")->query();
+		$result = $this->update()->table("`category`")->set("name='$name', english='$english', description='$description', type=$type")->where("id = $id")->query();
 		return $result;
 	}
 
@@ -67,6 +72,24 @@ class Category extends database\Mapper
 		$id = registry\Request::instance()->get("id");
 		$data = $this->delete()->table("category")->where("id = $id")->query();
 		registry\Request::instance()->set("return", $data);
+	}
+
+	//获取一级栏目
+	public function firstCate() {
+		$this->select("*")->table("category")->where("parentid = 0")->fetchAll();
+		return $this->data;
+	}
+
+	//通过一级栏目id查询子栏目的文章
+	public function childList($id){
+		$this->select("*")->table("`category`, `article`")->where("article.cateid = category.id AND category.parentid = $id")->order("time DESC")->fetchAll();
+		return $this->data;
+	}
+
+	//直接由栏目ID查询文章
+	public function article($id) {
+		$this->select("*")->table("`category`, `article`")->where("article.cateid = category.id AND category.id=$id")->order("time DESC")->fetchAll();
+		return $this->data;
 	}
 
 

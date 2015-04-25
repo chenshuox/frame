@@ -37,6 +37,10 @@ class Mysql
 		return $this->link->client_info;
 	}
 
+	public function insertId() {
+		return $this->link->insert_id;
+	}
+
 	public function close() {
 		$this->link->close();
 	}

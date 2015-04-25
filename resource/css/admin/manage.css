@@ -73,6 +73,10 @@ input, textarea, select{
 	width: 20em;
 	font-size: 14px;
 }
+#content input.h-title{
+	width: 97%;
+	padding: 8px;
+}
 #content input[type=date]{
 	padding: 3px;
 	border: 1px solid #ccc;
@@ -99,6 +103,30 @@ input, textarea, select{
 	border-radius: 3px;
 	margin-right: 10px;
 	cursor: pointer;
+}
+#content .list ul{
+}
+#content .list ul li{
+	float: left;
+	height: 200px;
+	list-style-type: none;
+	margin-left: 10px;
+	border: 3px solid #5A6A7A;
+	padding: 2px;
+	background: #333;
+	position: relative;
+	overflow: hidden;
+}
+#content .list ul li img{
+	width: 200px;
+}
+#content .list ul li input.file{
+	width: 192px;
+	font-size: 12px;
+	position: absolute;
+	left: 2px;
+	bottom: 2px;
+	border: 1px solid #0c0;
 }
 .dalog{
 	opacity: 0;
