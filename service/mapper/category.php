@@ -4,8 +4,7 @@ use simple\system\core\database;
 use simple\system\core\registry;
 use simple\system\core\request;
 
-class Category extends database\Mapper
-{
+class Category extends database\Mapper {
 
 	public $table;
 
@@ -21,7 +20,7 @@ class Category extends database\Mapper
 		$type = $context->get("type");
 		$description = $context->get("description");
 		$fid = $get->get(3);
-		$path = $get->get(4).$fid."-";
+		$path = $get->get(4) . $fid . "-";
 		$result = $this->insert()->table("category")->filed("name, english, type, description, parentid, path")->value("'$name', '$english', $type, '$description', $fid, '$path'")->query();
 		return $result;
 	}
@@ -40,7 +39,7 @@ class Category extends database\Mapper
 	}
 
 	public function find() {
-		$this->select("*")->table("category")->order("concat(path,id)")->fetchAll();
+		$this->select("*")->table("`category`, `model`")->where("category.type = model.mid")->order("concat(category.path,category.id)")->fetchAll();
 		return $this->data;
 	}
 
@@ -81,19 +80,23 @@ class Category extends database\Mapper
 	}
 
 	//通过一级栏目id查询子栏目的文章
-	public function childList($id){
-		$this->select("*")->table("`category`, `article`")->where("article.cateid = category.id AND category.parentid = $id")->order("time DESC")->fetchAll();
+	public function childList($id) {
+		$this->select("article.id, article.title, article.time, article.description,article.cover, article.content, article.cateid, document.path")->table("`category`, `article`, `document`")->where("article.cateid = category.id AND category.parentid = $id AND article.cover=document.id")->order("time DESC")->fetchAll();
 		return $this->data;
 	}
 
 	//直接由栏目ID查询文章
 	public function article($id) {
-		$this->select("*")->table("`category`, `article`")->where("article.cateid = category.id AND category.id=$id")->order("time DESC")->fetchAll();
+		$this->select("article.id, article.title, article.time, article.description,article.cover, article.content, article.cateid, document.path")->table("`category`, `article`, `document`")->where("article.cateid = category.id AND category.id = $id AND article.cover=document.id")->order("time DESC")->fetchAll();
 		return $this->data;
 	}
 
+	//查询模型
+	public function selectModel() {
+		$this->select("*")->table("`model`")->fetchAll();
+		return $this->data;
+	}
 
 }
-
 
 ?>

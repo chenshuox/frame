@@ -1,11 +1,9 @@
 <?php
 namespace simple\service\mapper;
 use simple\system\core\database;
-use simple\system\core\registry;
 use simple\system\core\request;
 
-class Article extends database\Mapper
-{
+class Article extends database\Mapper {
 
 	public $table;
 
@@ -13,25 +11,27 @@ class Article extends database\Mapper
 		parent::__construct();
 	}
 
+	// 添加文章
 	public function add() {
 		$context = new request\Request();
-		$cateid  = $context->get("cateid");
-		$title   = $context->get("title");
-		if(empty($context->get("cover"))){
-			$cover = 0;
-		}else{
+		$cateid = $context->get("cateid");
+		$title = $context->get("title");
+		if (empty($context->get("cover"))) {
+			$cover = 1;
+		} else {
 			$cover = $context->get("cover");
 		}
-		
-		$description   = $context->get("description");
+
+		$description = $context->get("description");
 		$content = $context->get("editor01");
-		$time    = date("Y-m-d H:i:s", time());
-		$result = $this->insert()->table("article")->filed("cateid, title, description, content, time, cover")->value("$cateid, '$title', '$description','$content', '$time', $cover")->query();
+		$index = $context->get("index");
+		$time = date("Y-m-d H:i:s", time());
+		$result = $this->insert()->table("article")->filed("cateid, title, description, content, time, cover, indexs")->value("$cateid, '$title', '$description','$content', '$time', $cover, $index")->query();
 		return $result;
 	}
 
 	public function find() {
-		$this->select("article.title, article.content, article.time, article.cateid, article.id, category.name")->table("`article`, `category`")->where("article.cateid=category.id")->order("time DESC")->fetchAll();
+		$this->select("article.title, article.content, article.time, article.cateid, article.id, category.name, article.indexs")->table("`article`, `category`")->where("article.cateid=category.id")->order("time DESC")->fetchAll();
 		return $this->data;
 	}
 
@@ -45,7 +45,7 @@ class Article extends database\Mapper
 	public function selectArticle() {
 		$get = new request\Pathinfo();
 		$id = $get->get(3);
-		$this->select("*")->table("`article`, `document`")->where("article.id = $id AND article.cover=document.id")->fetch();
+		$this->select("article.title, article.content, article.time, article.cateid, article.description, article.id, document.path")->table("`article`, `document`")->where("article.id = $id AND article.cover=document.id")->fetch();
 		return $this->data;
 	}
 
@@ -68,26 +68,45 @@ class Article extends database\Mapper
 		$description = $context->get("description");
 		$content = $context->get("editor01");
 		$time = date("Y-m-d H:i:s", time());
-
+		$index = $context->get("index");
 		$get = new request\Pathinfo();
 		$id = $get->get(3);
 
-		$result = $this->update()->table("`article`")->set("title='$title', description='$description', content='$content', time='$time'")->where("id = $id")->query();
+		$result = $this->update()->table("`article`")->set("title='$title', description='$description', content='$content', time='$time', indexs=$index")->where("id = $id")->query();
 		return $result;
 	}
 
 	/*
-		返回文件ID
-	*/
+	返回文件ID
+	 */
 
-	public function document($name) {
+	public function document($path) {
 		$time = date("Y-m-d H:i:s", time());
-		$result = $this->insert()->table("document")->filed("name, time")->value("'$name', '$time'")->query();
+		$result = $this->insert()->table("document")->filed("path, time")->value("'$path', '$time'")->query();
 		return $this->link->insertId();
 	}
 
+	// 首页推荐
+	public function indexShow() {
+		$this->select("article.title, category.name, article.content, article.time, article.cateid, article.description, article.id, document.path")->table("`article`, `document`, `category`")->where("article.cateid=category.id AND article.cover=document.id AND article.indexs>0")->order("article.time DESC")->limit(0, 10)->fetchAll();
+		return $this->data;
+	}
+
+	//添加心情
+	public function addMood() {
+		$context = new request\Request();
+		$title = $context->get("title");
+		$time = date("Y-m-d H:i:s", time());
+		$result = $this->insert()->table("mood")->filed("title, time")->value("'$title', '$time'")->query();
+		return $result;
+	}
+
+	//查询心情
+	public function selectMood() {
+		$this->select("*")->table("`mood`")->order("mood.time DESC")->fetch();
+		return $this->data;
+	}
 
 }
-
 
 ?>

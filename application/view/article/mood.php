@@ -15,53 +15,12 @@
 	<?php echo $result;?>
 	</div>
 <?php }?>
-	<form action="<?php view\View::url('article/add');?>" method="post">
+	<form id="form" action="<?php view\View::url('article/mood');?>" method="post">
 	<table>
+
 		<tr>
-			<td>所属分类</td>
-			<td class="cate">
-				<select class="first" name="cateid">
-				<option value="-1">选择栏目</option>
-				<?php foreach ($data as $v) {?>
-					<option value="<?php echo $v['id'];?>"><?php echo $v["name"];?></option>
-				<?php }?>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td>标题</td>
-			<td><input autocomplete="off" class="h-title" type="text" name="title"></td>
-		</tr>
-		<tr>
-			<td>内容</td>
-			<td>
-				<textarea rows="30" cols="50" name="editor01"></textarea>
-			</td>
-		</tr>
-		<tr>
-			<td>摘要</td>
-			<td>
-				<textarea rows="4" cols="50" name="description"></textarea>
-			</td>
-		</tr>
-		<tr>
-			<td>附件上传</td>
-			<td><input type="file" id="file" multiple /></td>
-		</tr>
-		<tr>
-			<td>附件列表</td>
-			<td class="list">
-				<ul></ul>
-			</td>
-		</tr>
-		<tr>
-			<td>推荐到首页</td>
-			<td>
-				<select name="index">
-					<option value="0">不推荐</option>
-					<option value="1">推荐</option>
-				</select>
-			</td>
+			<td width="140">此刻说点什么</td>
+			<td><input autocomplete="off" id="title" class="h-title" type="text" name="title"></td>
 		</tr>
 		<tr>
 			<td><input type="reset" value="重置"></td>
@@ -101,6 +60,19 @@
                 });
             });
     });
+    </script>
+    <script type="text/javascript">
+    var title = document.getElementById('title');
+    var form = document.getElementById('form');
+    form.onsubmit=function(){
+    	var value = title.value;
+    	if(value == ""){
+    		alert("发表心情不能为空！");
+    		return false;
+    	}
+    	return true;
+    }
+
     </script>
 </script>
 </body>

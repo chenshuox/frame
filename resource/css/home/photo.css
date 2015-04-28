@@ -1,0 +1,50 @@
+@-webkit-keyframes animation {
+		from { -webkit-transform: rotateY(0deg); }
+		to { -webkit-transform: rotateY(360deg); }
+}
+#section ul.category{
+	margin-top: 20px;
+}
+#section ul.category li{
+	float: left;
+	list-style-type: none;
+	margin-right: 20px;
+	margin-top: 10px;
+}
+#section .list{
+	margin-top: 40px;
+}
+#section ul.category li a{
+	padding: 10px 20px;
+	display: block;
+	border: 2px solid #fff;
+	font-size: 14px;
+	border-radius: 5px;
+	color: #fff;
+	text-decoration: none;
+}
+#section .list ul{
+	margin-left: -1%;
+}
+#section .list ul li{
+	list-style-type: none;
+	float: left;
+	width: 24%;
+	margin-left: 1%;
+	margin-bottom: 2%;
+	-webkit-perspective: 800;
+	-webkit-perspective-origin: 50% 50%;
+	-webkit-transform-style: -webkit-preserve-3d;
+}
+#section .list ul li img{
+	width: 100%;
+	margin: 1px;
+}
+#section .list ul li img:hover{
+	-webkit-animation: animation 2s;
+}
+#section .list ul li a{
+	color: #fff;
+	font-size: 12px;
+	text-decoration: none;
+}

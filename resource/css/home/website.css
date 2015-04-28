@@ -1,0 +1,40 @@
+
+#section ul.category{
+	margin-top: 20px;
+}
+#section ul.category li{
+	float: left;
+	list-style-type: none;
+	margin-right: 20px;
+	margin-top: 10px;
+}
+#section .list{
+	margin-top: 40px;
+	background: rgba(0,0,0,0.5);
+}
+#section ul.category li a{
+	padding: 10px 20px;
+	display: block;
+	border: 2px solid #fff;
+	font-size: 14px;
+	border-radius: 5px;
+	color: #fff;
+	text-decoration: none;
+}
+#section .list table{
+	border-top: 1px solid #555;
+	border-left: 1px solid #555;
+	width: 100%;
+	border-spacing: 0px;
+	border-collapse: 0px;
+}
+#section .list table tr td{
+	border-bottom: 1px solid #555;
+	border-right: 1px solid #555;
+	color: #aaa;
+	padding: 10px;
+	font-size: 14px;
+}
+#section .list table tr td a{
+	color: #0a0;
+}

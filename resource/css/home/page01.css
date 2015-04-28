@@ -1,0 +1,82 @@
+#section ul.category{
+	margin-top: 20px;
+}
+#section ul.category li{
+	float: left;
+	list-style-type: none;
+	margin-right: 20px;
+	margin-top: 10px;
+}
+#section ul.category li a{
+	padding: 10px 20px;
+	display: block;
+	border: 2px solid #fff;
+	font-size: 14px;
+	border-radius: 5px;
+	color: #fff;
+	text-decoration: none;
+}
+.content {
+	margin-top: 40px;
+	background: #fff;
+	padding: 100px;
+}
+.title{
+		height: 140px;
+}
+	.title h1, .title span, .title p{
+		float: left;
+	}
+	.title h1{
+		color: #888;
+		font-size: 30px;
+		padding-right: 30px;
+	}
+	.title span.v01, span.v02, span.v03{
+		display: block;
+		width: 14px;
+		height: 14px;
+		margin-left: 3px;
+		margin-top: 10px;
+		text-indent: -999999px;
+	}
+	.title span.v01{
+		background: #FFE619;
+	}
+	.title span.v02{
+		background: #FD3611;
+	}
+	.title span.v03{
+		background: #39AAFD;
+	}
+	.title p.website{
+		color: #555;
+		padding-left: 40px;
+		margin-top: 12px;
+	}
+	.title p.description{
+		clear: both;
+		line-height: 80px;
+	}
+	.title p.description span{
+		padding-right: 20px;
+		font-size: 14px;
+	}
+	h2{
+		font-size: 20px;
+		color: #19A8C1;
+		line-height: 50px;
+		padding-top: 30px;
+	}
+	.content > p{
+		line-height: 30px;
+		font-size: 14px;
+		text-indent: 2em;
+	}
+	.content ul{
+		padding-left: 12px;
+	}
+	.content ul li{
+		line-height: 30px;
+		font-size: 14px;
+	}

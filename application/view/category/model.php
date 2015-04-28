@@ -17,24 +17,20 @@
 	<table>
 		<tr class="title">
 			<td>编号</td>
-			<td>文章标题</td>
-			<td>首页推荐</td>
-			<td>栏目</td>
-			<td>时间</td>
+			<td>模型名称</td>
+			<td>模型摘要</td>
 			<td>操作</td>
 		</tr>
 		<?php if (!empty($data)) {?>
 		<?php foreach ($data as $v) {?>
+
 		<tr>
-			<td><?php echo $v["id"]?></td>
-			<td><a href="<?php view\View::url("article/show")?>/<?php echo $v["cateid"];?>/<?php echo $v["id"];?>"><?php echo $v["title"]?></a></td>
-			<td><?php if ($v["indexs"] == 0) {echo "<span class='n'>N</span>";} else {echo "<span class='y'>Y</span>";}?></td>
-			<td><?php echo $v["name"]?></td>
-			<td><?php echo $v["time"]?></td>
+			<td><?php echo $v["mid"]?></td>
+			<td><?php echo $v["modelName"]?></td>
+			<td><?php echo $v["description"]?></td>
 			<td>
-				<a class="edit" href='<?php view\View::url("article/move")?>/<?php echo $v["id"];?>'>移动</a>
-				<a class="edit" href='<?php view\View::url("article/edit");?>/<?php echo $v["id"];?>'>编辑</a>
-				<a class="edit del" href="<?php view\View::url('article/delete/');?><?php echo $v['id'];?>">删除</a>
+				<a class="edit" href='<?php view\View::url("category/editModel");?>/<?php echo $v["id"];?>'>编辑</a>
+				<a class="edit del" href="<?php view\View::url('category/deleteModel/');?><?php echo $v['id'];?>">删除</a>
 			</td>
 		</tr>
 		<?php }}?>

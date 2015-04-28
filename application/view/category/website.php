@@ -4,7 +4,7 @@
 <head>
 	<?php view\View::import("common", "head");?>
 	<?php view\View::link("home/base.css");?>
-	<?php view\View::link("home/show.css");?>
+	<?php view\View::link("home/website.css");?>
 </head>
 <body>
 <div id="warpper">
@@ -24,15 +24,26 @@
 		</ul>
 		<?php }?>
 		<div class="list">
-			<dl>
-			<?php foreach ($value as $v) {?>
-				<dt><a href="<?php view\View::url('article/show');?>/<?php echo $v['cateid'];?>/<?php echo $v['id'];?>"><?php echo $v["title"];?></a></dt>
-				<dd>
-					<p class="time"><?php echo $v["time"];?></p>
-					<p class="desc"><?php echo $v["description"];?></p>
-				</dd>
+			<table>
+				<tr>
+					<td>序号</td>
+					<td>网站</td>
+					<td>访问</td>
+					<td>备注</td>
+					<td>添加时间</td>
+				</tr>
+			<?php $i = 0;foreach ($value as $v) {?>
+				<?php $i++;?>
+
+				<tr>
+					<td><?php echo $i;?></td>
+					<td><?php echo $v["title"];?></td>
+					<td><a href="<?php echo $v["description"];?>" target="new">LINK</a></td>
+					<td><?php echo $v["content"];?></td>
+					<td><?php echo $v["time"];?></td>
+				</tr>
 			<?php }?>
-			</dl>
+			</table>
 		</div>
 	</div>
 	<div id="footer">

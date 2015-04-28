@@ -144,6 +144,9 @@ img{
 	text-align: center;
 	line-height: 40px;
 }
+#article .content img{
+	max-width: 90%;
+}
 #footer{
 	margin-top: 40px;
 	background: #000;

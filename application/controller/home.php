@@ -1,24 +1,36 @@
 <?php
 namespace simple\application\controller;
-use simple\system\core\controller;
-use simple\system\core\common;
 use simple\service\mapper;
+use simple\system\core\common;
+use simple\system\core\controller;
 
-class Home extends controller\Controller
-{
+class Home extends controller\Controller {
 
 	public function init() {
 		$array = common\Config::get("web");
 		$this->assign("webName", $array["webName"]);
-		$this->assign("description",$array["description"]);
-		$this->assign("powered",$array["powered"]);
+		$this->assign("description", $array["description"]);
+		$this->assign("powered", $array["powered"]);
 		$this->view("home", "index");
 	}
 
 	public function index() {
-		$mapper = new mapper\Category();
-		$data = $mapper->firstCate();
-		$this->assign("data", $data);
+		$mapper = new mapper\Article();
+		$data = $mapper->indexShow();
+
+		$count = count($data);
+		for ($i = 0; $i < $count; $i++) {
+			if ($i % 2 == 0) {
+				$even[$i] = $data[$i];
+			} else {
+				$odd[$i] = $data[$i];
+			}
+		}
+		$this->assign("odd", $odd);
+		$this->assign("even", $even);
+
+		$mood = $mapper->selectMood();
+		$this->assign("mood", $mood);
 		$this->view("home", "index");
 	}
 
