@@ -106,6 +106,16 @@ class Article extends database\Mapper {
 		$this->select("*")->table("`mood`")->order("mood.time DESC")->fetch();
 		return $this->data;
 	}
+	//查询文件
+	public function fileSelect() {
+		$this->select('*')->table("`document`")->fetchAll();
+		return $this->data;
+	}
+
+	public function deleteFile($id) {
+		$result = $this->delete()->table("`document`")->where("id=$id");
+		return $result;
+	}
 
 }
 

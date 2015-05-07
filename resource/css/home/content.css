@@ -147,6 +147,15 @@ img{
 #article .content img{
 	max-width: 90%;
 }
+#article .content h3{
+	line-height: 40px;
+}
+
+#article .content pre.code{
+	padding: 3px;
+	font-size: 14px;
+	line-height: 20px;
+}
 #footer{
 	margin-top: 40px;
 	background: #000;

@@ -1,8 +1,7 @@
 <?php
 namespace simple\system\core\controller;
 
-class ApplicationHelper
-{
+class ApplicationHelper {
 	private $control;
 	private $action;
 	private $data;
@@ -10,28 +9,28 @@ class ApplicationHelper
 	//类的自动加载
 	public static function load($filename) {
 		$filename = strtolower($filename);
-		if(preg_match("/\\\\/", $filename)) {
-			$filename = substr(str_replace("\\", "/", $filename).".php", 7);
+		if (preg_match("/\\\\/", $filename)) {
+			$filename = substr(str_replace("\\", "/", $filename) . ".php", 7);
 		}
+
 		$path = $filename;
 		require $path;
 	}
 
 	public function config() {
-		
-	}
 
+	}
 
 	private function init() {
 		$route = new Route();
 		$this->control = $route->control;
 		$this->action = $route->action;
 	}
-	
+
 	public function run() {
 		$this->init();
-		$filename = "application/controller/".$this->control.".php";
-		if(!file_exists($filename)) {
+		$filename = "application/controller/" . $this->control . ".php";
+		if (!file_exists($filename)) {
 			throw new \Exception("请求出错！");
 		}
 		include $filename;

@@ -1,9 +1,7 @@
 <?php
 namespace simple\system\core\request;
-use simple\system\core\registry;
 
-class Request
-{
+class Request {
 	private $data;
 
 	public function __construct() {
@@ -11,10 +9,10 @@ class Request
 	}
 
 	private function handle() {
-		if(isset($_SERVER["REQUEST_METHOD"])) {
+		if (isset($_SERVER["REQUEST_METHOD"])) {
 			foreach ($_REQUEST as $key => $value) {
 				//特殊字符转义
-				$value = addslashes($value);
+				//$value = addslashes($value);
 				$this->set($key, $value);
 			}
 			return true;
@@ -22,7 +20,7 @@ class Request
 	}
 
 	public function get($key) {
-		if(isset($this->data[$key])) {
+		if (isset($this->data[$key])) {
 			return $this->data[$key];
 		}
 	}

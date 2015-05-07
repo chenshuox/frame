@@ -5,6 +5,9 @@
 	<?php view\View::import("common", "head");?>
 	<?php view\View::link("home/base.css");?>
 	<?php view\View::link("home/content.css");?>
+	<?php view\View::link("styles/monokai_sublime.css");?>
+	<script src="<?php echo URL;?>/resource/js/highlight.pack.js"></script>
+	<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
 <div id="warpper">

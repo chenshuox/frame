@@ -14,6 +14,10 @@ class View {
 		echo "<link rel='stylesheet' type='text/css' href=" . URL . "/resource/css/" . $param . " />";
 	}
 
+	public static function js($param) {
+		echo "<script type='text/javascript' href=" . URL . "/resource/js/" . $param . "></script>";
+	}
+
 	public static function import($path, $file) {
 		include "./application/view/" . $path . "/" . $file . ".php";
 	}

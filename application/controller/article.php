@@ -115,6 +115,18 @@ class Article extends controller\Controller {
 		$this->view("article", "mood");
 	}
 
+	public function file() {
+		$mapper = new mapper\Article();
+		if (!empty($_GET['file'])) {
+			$unlink = unlink($_GET['file']);
+			if ($unlink) {
+				$mapper->deleteFile($id);
+			}
+		}
+		$data = $mapper->fileSelect();
+		$this->assign("data", $data);
+		$this->view("article", "file");
+	}
 }
 
 ?>

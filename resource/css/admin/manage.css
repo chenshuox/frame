@@ -85,6 +85,12 @@ input, textarea, select{
 	width: 20em;
 	font-size: 14px;
 }
+#content input[type=password]{
+	padding: 3px;
+	border: 1px solid #ccc;
+	width: 20em;
+	font-size: 14px;
+}
 #content input.h-title{
 	width: 97%;
 	padding: 8px;

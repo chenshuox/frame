@@ -4,6 +4,7 @@ use simple\service\mapper;
 use simple\system\core\common;
 use simple\system\core\controller;
 use simple\system\core\registry;
+use simple\system\core\request;
 
 class Admin extends controller\Controller {
 
@@ -69,6 +70,39 @@ class Admin extends controller\Controller {
 		$html = "<li><img src='{$filepath}' /><input type='text' class='file' value='{$filepath}'> <input type='radio' name='cover' value='{$documentID}'>设为封面</li>";
 		echo $html;
 
+	}
+
+	public function manager() {
+		if ($this->post()) {
+			$mapper = new mapper\Admin();
+			$context = new request\Request();
+			$repassword = $context->get('repassword');
+			$supassword = $context->get('supassword');
+			if ($repassword != $supassword) {
+				$this->assign("result", "修改失败！两次输入的新密码不一致");
+			} else {
+				if ($mapper->selectPass()) {
+					if ($this->setPass()) {
+						$this->assign("result", "密码修改成功！");
+					}
+				} else {
+					$this->assign("result", "原密码输入错误！");
+				}
+			}
+		}
+		$this->view("admin", "manager");
+	}
+
+	private function setPass() {
+		$mapper = new mapper\Admin();
+		if ($mapper->setManager()) {
+			return true;
+		}
+	}
+
+	public function system() {
+		$this->view("admin", "system");
+		//$this->view("admin/index");
 	}
 
 }
